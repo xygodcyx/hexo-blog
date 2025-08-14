@@ -28,6 +28,7 @@ html(lang=config.language)
           - console.log(page.path)
           if is_post() || is_category() || is_tag()
             a#menu-back(href="javascript:history.back()") Back
+            a#menu-home(href="javascript:location.assign(`//${location.host}`)") Home
             if is_post()
               time(datetime=page.date.toJSON())= date(page.date, date_format)
           else
