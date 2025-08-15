@@ -15,6 +15,7 @@ stylesheets:
 # scripts loaded in the end of the body
 scripts:
   - /js/oasis.js
+  - /js/copy.js
 
 logo:
   - ./asset/logo.JPG

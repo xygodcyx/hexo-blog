@@ -54,6 +54,7 @@ markdown:
     quotes: "“”‘’"
   plugins:
     - markdown-it-prism
+    - markdown-it-anchor
   anchors:
     level: 2
     permalink: true
@@ -67,7 +68,7 @@ highlight:
   tab_replace: ''
   wrap: true
   hljs: true
-prismjs:
+prism_plugin:
   enable: true
   preprocess: true
   line_number: false
