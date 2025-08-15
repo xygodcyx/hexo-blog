@@ -15,7 +15,7 @@ doctype html
 html(lang=config.language)
   head
     meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
     title= pageTitle
     if theme.stylesheets !== undefined && theme.stylesheets.length > 0
       //- stylesheets list from _config.yml
@@ -52,6 +52,8 @@ html(lang=config.language)
               a #{new Date().getFullYear()}@ #{config.author}
               a(href="/atom.xml")
                 img(src="/assets/rss.png")
+              a(href=config.github_repo)
+                img(src="/assets/github.png")
             #hexo
               a Powered by&nbsp
               a(href="https://hexo.io") Hexo

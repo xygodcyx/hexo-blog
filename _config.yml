@@ -10,6 +10,7 @@ keywords: '技术博客,前端开发,JavaScript,Vue,React'
 author: 屈侯
 language: en
 timezone: ''
+github_repo: https://github.com/xygodcyx/hexo-blog
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
