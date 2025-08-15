@@ -1,23 +1,25 @@
-wordWrap = hexo-config('code_word_wrap')
-code-font-size = 0.90em
-code-font-family = JetBrains Mono, SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace
+wordWrap = hexo-config('code_word_wrap');
+code-font-size = 0.9em;
+code-font-family = JetBrains Mono, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+highlight-border-color = #d0d7de;
 
-highlight-border-color = #d0d7de
+@require 'prismjs/index';
 
-@require 'prismjs/index'
+#post,#page {
+  pre {
+    background: #f7f7f7;
+  }
 
-#post
-  pre
-    background #f7f7f7
-  pre, code
-    overflow: auto
-    font-size: code-font-size
-    font-family: code-font-family !important
-    border-radius 0.3em
+  pre, code {
+    overflow: auto;
+    font-size: code-font-size;
+    font-family: code-font-family !important;
+    border-radius: 0.3em;
+  }
+}
 
-// 移动端适配
 @media (max-width: 768px) {
-  #post {
+  #post,#page {
     pre, code {
       font-size: 0.85em;
       line-height: 1.4;
@@ -41,7 +43,6 @@ highlight-border-color = #d0d7de
   }
 }
 
-// 小屏幕手机适配
 @media (max-width: 480px) {
   #post {
     pre, code {

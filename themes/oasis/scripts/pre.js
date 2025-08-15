@@ -9,6 +9,7 @@ hexo.on('generateBefore', function () {
 
     const themeConfig = hexo.theme.config
     const hexoConfig = hexo.config
+    console.log(hexoConfig.prism_plugin)
     themeConfig.hljs_settings = hexoConfig.highlight
-    themeConfig.prismjs_settings = hexoConfig.prismjs
+    themeConfig.prismjs_settings = hexoConfig.prism_plugin
 })

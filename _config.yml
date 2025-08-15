@@ -8,7 +8,7 @@ subtitle: ''
 description: '一个不知所云的人在写一些看不懂的字'
 keywords: '技术博客,前端开发,JavaScript,Vue,React'
 author: 屈侯
-language: zh
+language: en
 timezone: ''
 
 # URL
@@ -43,19 +43,37 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
-syntax_highlighter: highlight.js
+markdown:
+  preset: "default"
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: "“”‘’"
+  plugins:
+    - markdown-it-prism
+  anchors:
+    level: 2
+    permalink: true
+    permalinkClass: "header-anchor"
+    permalinkSymbol: "#"
+syntax_highlighter: prism.js
 highlight:
   enable: false
-  line_number: true
+  line_number: false
   auto_detect: false
   tab_replace: ''
   wrap: true
-  hljs: false
+  hljs: true
 prismjs:
   enable: true
   preprocess: true
-  line_number: true
+  line_number: false
+  theme: 'tomorrow'
   tab_replace: ''
+
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
