@@ -7,8 +7,13 @@ block content
         for photo in page.photos
           img(src=url_for(photo) itemprop="contentUrl")
     != page.content
-    if page.tags && page.tags.length
+    .tags-categories
+      if page.tags && page.tags.length
       - var transform = function(str) { return '#' + str; }
       - var config = {class: 'post-tag', show_count: false, style: false, transform: transform, separator: ', ', transform: transform}
       .post-tags!= list_tags(page.tags, config)
+      if page.categories && page.categories.length
+      - var transform = function(str) { return '~' + str; }
+      - var config = {class: 'post-categories', show_count: false, style: false, transform: transform, separator: ', ', transform: transform}
+      .post-categories!= list_categories(page.categories, config)
   #paginator!= paginator()

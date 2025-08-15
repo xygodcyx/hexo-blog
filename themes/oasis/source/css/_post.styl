@@ -1,6 +1,6 @@
 color-border = #f3f3f3;
 
-#post,#page {
+#post, #page {
     color: color-primary;
 
     p {
@@ -103,11 +103,20 @@ color-border = #f3f3f3;
         }
     }
 
-    div.post-tags {
-        margin-top: 5em;
+    .tags-categories {
+        margin-top: 5rem;
+        display: flex;
+        justify-content: space-between;
+        .post-tags {
+            a {
+                color: color-accent;
+            }
+        }
 
-        a {
-            color: color-accent;
+        .post-categories {
+            a {
+                color: color-accent;
+            }
         }
     }
 
@@ -121,7 +130,7 @@ color-border = #f3f3f3;
 
 // 移动端适配
 @media (max-width: 768px) {
-    #post,#page {
+    #post, #page {
         p {
             font-size: 0.95em;
             line-height: 1.6;
@@ -181,7 +190,6 @@ color-border = #f3f3f3;
         }
 
         div.post-tags {
-            margin-top: 3em;
             font-size: 0.9em;
         }
 
@@ -232,7 +240,6 @@ color-border = #f3f3f3;
         }
 
         div.post-tags {
-            margin-top: 2em;
             font-size: 0.85em;
         }
 
@@ -349,8 +356,6 @@ color-border = #f3f3f3;
     }
 
     div.post-tags {
-        margin-top: 5em;
-
         a {
             color: color-accent;
         }
@@ -425,7 +430,6 @@ color-border = #f3f3f3;
         }
 
         div.post-tags {
-            margin-top: 3em;
             font-size: 0.9em;
         }
 
@@ -475,7 +479,6 @@ color-border = #f3f3f3;
         }
 
         div.post-tags {
-            margin-top: 2em;
             font-size: 0.85em;
         }
 

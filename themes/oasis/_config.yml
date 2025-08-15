@@ -16,6 +16,7 @@ stylesheets:
 scripts:
   - /js/oasis.js
   - /js/copy.js
+  - /js/anchor.js
 
 logo:
   - ./asset/logo.JPG
