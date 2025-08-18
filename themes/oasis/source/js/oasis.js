@@ -33,7 +33,7 @@ function getPath(url) {
 }
 
 // if (window.addEventListener) {
-    // window.addEventListener('load', onLoad, false); //W3C
+//     window.addEventListener('load', onLoad, false); //W3C
 // } else {
-    // window.attachEvent('onload', onLoad); //IE
+//     window.attachEvent('onload', onLoad); //IE
 // }

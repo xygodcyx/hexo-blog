@@ -5,9 +5,9 @@
 # Site
 title: XyGod
 subtitle: ''
-description: '一个不知所云的人在写一些看不懂的字'
-keywords: '技术博客,前端开发,JavaScript,Vue,React'
-author: 屈侯
+description: ''
+keywords: ''
+author: Qu Hou
 language: en
 timezone: ''
 github_repo: https://github.com/xygodcyx/hexo-blog
@@ -15,6 +15,7 @@ github_repo: https://github.com/xygodcyx/hexo-blog
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: http://quhou.top
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -44,38 +45,18 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
-markdown:
-  preset: "default"
-  render:
-    html: true
-    xhtmlOut: false
-    breaks: true
-    linkify: true
-    typographer: true
-    quotes: "“”‘’"
-  plugins:
-    - markdown-it-prism
-    - markdown-it-anchor
-  anchors:
-    level: 2
-    permalink: true
-    permalinkClass: "header-anchor"
-    permalinkSymbol: "#"
-syntax_highlighter: prism.js
 highlight:
   enable: false
-  line_number: false
+  line_number: true
   auto_detect: false
   tab_replace: ''
   wrap: true
-  hljs: true
-prism_plugin:
+  hljs: false
+prismjs:
   enable: true
   preprocess: true
-  line_number: false
-  theme: 'tomorrow'
+  line_number: true 
   tab_replace: ''
-
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -111,9 +92,9 @@ pagination_dir: page
 
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
-include:
-exclude:
-ignore:
+# include:
+# exclude:
+# ignore:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
@@ -124,3 +105,8 @@ theme: oasis
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+server:
+  compress: true # 开启压缩
+
+markdown: 'default'
