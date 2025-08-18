@@ -34,7 +34,7 @@ html(lang=config.language)
               time(datetime=page.date.toJSON())= date(page.date, date_format)
           else
             each url, label in theme.menu
-              if is_current(url)
+              if !is_year() && is_current(url)
                 span= label
               else
                 a.menu-item(href=url)= label
