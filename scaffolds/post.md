@@ -1,6 +1,6 @@
 ---
-title: {{ title }}
-date: {{ date }}
-tags: 
- - 默认
+title: { { title } }
+date: { { date } }
+tags: ''
+categories: ''
 ---
