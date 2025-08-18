@@ -195,6 +195,18 @@ aside {
 
       a {
         font-size: 1.1em;
+
+        &[target='_blank'] {
+          position: relative;
+
+          &::after {
+            content: '↗';
+            font-size: 12px;
+            position: absolute;
+          }
+
+          color: blue;
+        }
       }
     }
   }
@@ -239,6 +251,18 @@ aside {
     p {
       a {
         font-size: 1em;
+
+        &[target='_blank'] {
+          position: relative;
+
+          &::after {
+            content: '↗';
+            font-size: 12px;
+            position: absolute;
+          }
+
+          color: blue;
+        }
       }
     }
   }
