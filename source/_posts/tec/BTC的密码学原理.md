@@ -6,9 +6,9 @@ categories: ['技术']
 author: QuHou
 ---
 
-# 主要用到两个密码学原理：签名和哈希
+## 主要用到两个密码学原理：签名和哈希
 
-## 哈希
+### 哈希
 
 交易的过程并不加密，交易账号的地址和金额公开透明
 
@@ -44,7 +44,7 @@ puzzle friendly 是指事先无法知道哪个数值会算出此 hash 值
 
 比特币用的 hash 函数是：SHA-256：`Search Hash Algorithm`
 
-## 签名
+### 签名
 
 使用加密货币需要拥有一个账户，可以自己开户，是去中心化的
 
@@ -52,13 +52,13 @@ public key，private key
 
 f
 
-## BTC 协议
+### BTC 协议
 
 数字货币的协议
 
 double speeding attack 双花攻击
 
-## 数据结构
+### 数据结构
 
 要说明支付方钱的来源
 

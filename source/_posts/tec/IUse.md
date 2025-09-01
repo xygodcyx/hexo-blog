@@ -27,9 +27,9 @@ excerpt: 记录一下自己常用的工具，将来换电脑时可以快速配�
 4. 下载软件：[IDM](https://www.internetdownloadmanager.com/download.html)，注意配置UA（netdisk;P2SP;3.0.20.88），以及设置idm不要自动下载浏览器里的文件，这很烦人
 5. 代理软件：[Clash](https://ikuuu.one/user/tutorial?os=windows&client=cfw)，这个提供商提供的软件几乎是开箱即用的，无需对国外和国内网站进行单独配置
 
-    "terminal.integrated.fontFamily": "MesloLGM Nerd Font",
 6. 终端美化：[oh-my-posh](https://ohmyposh.dev/)整天对着黑框框敲命令也太不爽了，对了，安装好oh-my-posh后不要忘记在vscode里设置一下终端字体（字体不要忘记安装了）
     ``` json
+    "terminal.integrated.fontFamily": "MesloLGM Nerd Font",
     ```
     顺便再下载一个[Windows Terminal](https://github.com/microsoft/terminal)，可以十分方便的进行分屏操作，终于不用在vscode里开终端占位置了（笔记本屏幕本来就小）
 
