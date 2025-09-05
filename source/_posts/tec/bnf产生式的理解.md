@@ -5,6 +5,7 @@ tags: ['编译原理', 'bnf']
 categories: ['技术']
 author: QuHou
 excerpt: bnf产生式是为了厘清表达式的层级关系，将其层层拆解，一点点的提取出要运行的表达式
+lang: en
 ---
 
 四则运算的 BNF 产生式

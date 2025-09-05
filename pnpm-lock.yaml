@@ -29,9 +29,15 @@ importers:
       hexo-generator-index:
         specifier: ^2.0.0
         version: 2.0.0
+      hexo-generator-index-i18n:
+        specifier: ^0.2.1
+        version: 0.2.1
       hexo-generator-tag:
         specifier: ^1.0.0
         version: 1.0.0
+      hexo-pagination:
+        specifier: ^4.0.0
+        version: 4.0.0
       hexo-renderer-ejs:
         specifier: ^1.0.0
         version: 1.0.0
@@ -675,6 +681,9 @@ packages:
     resolution: {integrity: sha512-Jo35VSRSNeMitS2JmjCq3OHAXXYU4+JIODujHtubdG/NRj2++b3Tgyz9pwTmROx6Yxr2php/hC8og5AGZHh8UQ==}
     engines: {node: '>=10.13.0'}
 
+  hexo-generator-index-i18n@0.2.1:
+    resolution: {integrity: sha512-Yp6uTt+6oPe1qSYU/lJNO4ZbAis4iWnrTKNRE+R4qIYCZTpl5UXAt5KqWpTqXlulYzfXhlcW2Qyo3d93GV4X5g==}
+
   hexo-generator-index@2.0.0:
     resolution: {integrity: sha512-q/29Vj9BZs0dwBcF+s9IT8ymS4aYZsDwBEYDnh96C8tsX+KPY5v6TzCdttz58BchifaJpP/l9mi6u9rZuYqA0g==}
     engines: {node: '>=10.13.0'}
@@ -699,9 +708,16 @@ packages:
     resolution: {integrity: sha512-i2Sgxk8Cgx5viSjq5qW5N/rBFfwoCKQcH8qnnW1fawCapcdEAhIsq+Y3vbrs9bssyDlyU6Vqm4oQmosREaNI7Q==}
     engines: {node: '>=14'}
 
+  hexo-pagination@0.1.0:
+    resolution: {integrity: sha512-Ji/LYq7xP7cdBdG15CJ4YZZNA/c6Kf64rXj+Jp2bKsC2JTgcBmz+GGkHwpk6aoMHXRP2XraxGcGjXhITr7ooYg==}
+
   hexo-pagination@1.0.0:
     resolution: {integrity: sha512-miEVFgxchPr2qNWxw0JWpJ9R/Yaf7HjHBZVjvCCcqfbsLyYtCvIfJDxcEwz1sDOC/fLzYPqNnhUI73uNxBHRSA==}
     engines: {node: '>=8.6.0'}
+
+  hexo-pagination@4.0.0:
+    resolution: {integrity: sha512-jNG6AX3EHzY3FRfdzB46tZ833CUX4WudZue3yv6kKaVCCWR61iwFL9LD6xQadvwHBuT1oHy444dJClWORG4sxg==}
+    engines: {node: '>=18'}
 
   hexo-renderer-ejs@1.0.0:
     resolution: {integrity: sha512-O925i69FG4NYO62oWORcPhRZZX0sPx1SXGKUS5DaR/lzajyiXH5i2sqnkj0ya0rNLXIy/D7Xmt7WbFyuQx/kKQ==}
@@ -2221,6 +2237,10 @@ snapshots:
     transitivePeerDependencies:
       - chokidar
 
+  hexo-generator-index-i18n@0.2.1:
+    dependencies:
+      hexo-pagination: 0.1.0
+
   hexo-generator-index@2.0.0:
     dependencies:
       hexo-pagination: 1.0.0
@@ -2246,7 +2266,13 @@ snapshots:
     dependencies:
       picocolors: 1.1.1
 
+  hexo-pagination@0.1.0:
+    dependencies:
+      object-assign: 4.1.1
+
   hexo-pagination@1.0.0: {}
+
+  hexo-pagination@4.0.0: {}
 
   hexo-renderer-ejs@1.0.0:
     dependencies:
