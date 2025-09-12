@@ -1,5 +1,5 @@
 ---
-title: 联系
+title: Contact
 date: 2025-08-13 17:48:31
 ---
 ### GitHub

@@ -3,14 +3,14 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 屈侯
+title: XyGod
 subtitle: ''
 description: ''
 keywords: ''
 author: Qu Hou
 language: 
-  - zh-CN
   - en
+  - zh-CN
 permalink: :lang/:title/
 timezone: ''
 github_repo: https://github.com/xygodcyx/hexo-blog
@@ -47,7 +47,7 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
-new_post_name: :lang/:title.md # File name of new posts
+new_post_name: :title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link:
@@ -114,7 +114,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: frame
+theme: oasis
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
