@@ -9,14 +9,14 @@ date: 2025-09-12 17:11:52
 ---
 
 
-## 安装Quartus和配置模拟器
+## 安装Quartus
 
 先下载[官网的版本](https://www.intel.com/content/www/us/en/software-kit/711791/intel-quartus-ii-web-edition-design-software-version-13-0sp1-for-windows.html?utm_source=chatgpt.com)
 
-然后用网上的破解器选择dll文件生成许可证，许可证里的XXXXXX要用tools/license setup里的NIC(ID)替换，然后选择这个许可证文件即可
+然后用网上的[破解器](/assets/EDA/Quartus_13.0_SP1_x64_hack.rar)选择dll文件，进行生成许可证操作，生成完的许可证里的XXXXXX要用tools/license setup里的NIC(ID)替换，然后选择这个许可证文件即可
 
 ![20250912171443.png](/assets/EDA/20250912171443.png)
-
+## Quartus的Hello World
 接着创建新项目测试软件的可用性：
 
 点击左上角的 File / New：
