@@ -11,7 +11,7 @@ author: Qu Hou
 language: 
   - en
   - zh-CN
-permalink: :lang/:title/
+permalink: /:title/
 timezone: ''
 github_repo: https://github.com/xygodcyx/hexo-blog
 
