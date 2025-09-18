@@ -120,7 +120,7 @@ endmodule
 
 很好，准备工作已经全部完成了，接下来我们创建第一个真正的项目吧~
 
-首先按照 [2.1 Quartus的Hello World](/tec/EDA/#2-1Quartus的Hello-World) 的方法点开创建项目的对话框：
+首先按照 [2.1 Quartus的Hello World](/tec/EDA/#2-1-Quartus的Hello-World) 的方法点开创建项目的对话框：
 
 ![20250918231140.png](/assets/EDA/20250918231140.png)
 
