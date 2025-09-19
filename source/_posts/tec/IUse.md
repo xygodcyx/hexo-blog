@@ -7,38 +7,44 @@ author: QuHou
 excerpt: 记录一下自己常用的工具，将来换电脑时可以快速配置和部署以便回复到之前的状态
 ---
 
-# I USE
-
 ## 硬件
 
 暂时没有很顺手的(主要是太穷了qwq，买不了好的设备)，目前使用的是联想小新air 14 alc 2021款，是我的第一个笔记本，鼠标是几十块的，键盘是自带的（买了一个狼蛛机械键盘，但是用不习惯……）
+
 ## 开发常用软件
 
 1. 写代码：[Visual Studio Code](https://code.visualstudio.com/)，无需多言
 
 2. 代码管理工具：[Git](https://git-scm.com/downloads)，注意配置代理
+
     ``` bash
     git config --global http.proxy http://127.0.0.1:7890
 
     git config --global https.proxy https://127.0.0.1:7890
     ```
+
 3. 翻译软件：[网易有道翻译](https://fanyi.youdao.com/download-Windows?keyfrom=fanyiweb_navigation), 界面简洁、功能强大。唯一需要注意的是记得关闭自带的快捷键，划词翻译也可以考虑关闭了，这个功能对程序员来说就是累赘，经常莫名其妙的弹出导致误点击
 
 4. 下载软件：[IDM](https://www.internetdownloadmanager.com/download.html)，注意配置UA（netdisk;P2SP;3.0.20.88），以及设置idm不要自动下载浏览器里的文件，这很烦人
 5. 代理软件：[Clash](https://ikuuu.one/user/tutorial?os=windows&client=cfw)，这个提供商提供的软件几乎是开箱即用的，无需对国外和国内网站进行单独配置
 
 6. 终端美化：[oh-my-posh](https://ohmyposh.dev/)整天对着黑框框敲命令也太不爽了，对了，安装好oh-my-posh后不要忘记在vscode里设置一下终端字体（字体不要忘记安装了）
+
     ``` json
     "terminal.integrated.fontFamily": "MesloLGM Nerd Font",
     ```
+
     顺便再下载一个[Windows Terminal](https://github.com/microsoft/terminal)，可以十分方便的进行分屏操作，终于不用在vscode里开终端占位置了（笔记本屏幕本来就小）
 
     `power shell 7.0`也值得下载，比普通的power shell支持更多自定义模块，直接用命令下载就行
+
     ``` bash
     winget install --id Microsoft.PowerShell --source winget
     ```
+
     下载完毕后vscode可能会识别不到，可以手动配置setting.json
     ::: details 配置power shell 7.0为默认终端
+
     ``` json
     "terminal.integrated.profiles.windows": {
         "PowerShell 7": {
@@ -47,18 +53,22 @@ excerpt: 记录一下自己常用的工具，将来换电脑时可以快速配�
     },
     "terminal.integrated.defaultProfile.windows": "PowerShell 7",
     ```
+
     :::
 
 ## 日常使用软件
+
 1. [QQ](https://im.qq.com/),无需多言
 2. [微信](https://pc.weixin.qq.com/),无需多言
 3. [Koodo Reader](https://koodoreader.com/zh)，看电子书软件，十分好用
 4. [Z-lib](https://z-library.gs)，全世界最全的电子书库，到目前为止我想找的所有书都在这里找到了
+
 ## 一些配置文件
 
 1. power shell 7.0（oh-my-bash的初始化、别名配置等）
 
 ::: details setting.json
+
 ``` bash
 # 初始化 oh-my-posh（注意替换你的主题路径）
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\kushal.omp.json" | Invoke-Expression
@@ -193,6 +203,7 @@ Function as { Get-Alias | Out-Host }
 2. vscode设置（不一定是最新的）
 
 ::: details setting.json
+
 ``` json
 {
   // 终端字体
@@ -419,4 +430,5 @@ Function as { Get-Alias | Out-Host }
   "lldb.suppressUpdateNotifications": true,
 }
 ```
+
 :::

@@ -1,5 +1,5 @@
 wordWrap = hexo-config('code_word_wrap');
-code-font-size = 0.9em;
+code-font-size = 1em;
 code-font-family = JetBrains Mono, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
 highlight-border-color = #d0d7de;
 
@@ -7,6 +7,7 @@ highlight-border-color = #d0d7de;
 
 #post, #page {
   pre {
+    padding: 12px 0;
     min-height: 1.5rem;
     background: #f7f7f7;
   }
@@ -33,7 +34,7 @@ highlight-border-color = #d0d7de;
 
     pre[class*='language-'] {
       &:not(.line-numbers) {
-        padding: 8px 12px;
+        padding: 8px 8px;
       }
 
       .caption {
