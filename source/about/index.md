@@ -1,6 +1,7 @@
 ---
-title: About
+title: 关于
 date: 2025-08-13 17:47:56
+nav: true
 ---
 
 hi

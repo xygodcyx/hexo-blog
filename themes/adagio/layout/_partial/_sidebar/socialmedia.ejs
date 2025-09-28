@@ -10,6 +10,13 @@
                         <i class="fab fa-github fa-stack-1x fa-inverse"></i>
                     </span>
                 </a>
+                <% } else if (mediatype == 'bilibili') { %>
+                <a href="https://space.bilibili.com/<%- theme.bilibili_uid %>">
+                    <span class="fa-stack fa-2x icon-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-bilibili-p fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
                 <% } else if (mediatype == 'pinterest') { %>
                 <a href="https://www.pinterest.com/<%- theme.pinterest_username %>">
                     <span class="fa-stack fa-2x icon-link">

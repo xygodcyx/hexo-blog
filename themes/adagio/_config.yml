@@ -51,12 +51,14 @@ favicon: /img/face.png
 # It's better if your choose four social networks.
 media_types:
     - github
+    - bilibili
     # - facebook
     # - pinterest
     # - linkedin
 # You should find the usernames from the url of your personal page.
 # Note: it's not the login username!
 github_username:       xygodcyx
+bilibili_uid:          1308065752
 pinterest_username:    xxxxx
 facebook_username:     xxxxx
 linkedin_username:     xxxxx
@@ -119,8 +121,8 @@ footer_content: Thanks for coming!
 # Use valine comment system.
 # For documentation: https://valine.js.org
 valine_comments: false
-valine_appId: xxxxxxxxxx
-valine_appKey: xxxxxxxxxx
+valine_appId: Rut3rqcEtcoHzeZmzHIHmEaw-gzGzoHsz
+valine_appKey: Goyr6nvk7Uw6y9hQNrrhvzim
 valine_placeholder: ~
 
 # CDN for the static contents.
@@ -128,7 +130,7 @@ valine_placeholder: ~
 # If use_cdn is true, you should specify cdn provider.
 # You can use 'bootcdn' (better in China) or 'cdnjs' (better outside China) (except bootstrap.css).
 use_cdn: true
-cdn_provider: bootcdn
+cdn_provider: cdnjs
 
 
 # Analytics
@@ -142,7 +144,7 @@ google_track_id: UA-11111111-1
 
 # Math parser
 # Math renderer has been moved to KaTeX now.
-math: true
+math: false
 
 # Copyright
 # If set, a copyright line will be added at the bottom of each post

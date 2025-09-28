@@ -9,8 +9,9 @@ class ApplauseEasy {
         let trigger_every = app.trigger_every;
         let trigger_fun = app.trigger_fun;
         let counter = 0;
-        let key = window.location.pathname + '#' + id;
+        let key = this.getKey(id);
         let browserCounter = 0;
+        let hasThanks = false
         if (!AV) { console.log('AV module is not registered.') }
         try {
             AV.init({ appId, appKey, serverURLs: "https://leancloud.cn", });
@@ -26,19 +27,25 @@ class ApplauseEasy {
                 </div>
             </div>`;
 
+        function run() {
+            updateRemote(key, browserCounter);
+            counter += browserCounter;
+            browserCounter = 0;
+            hasThanks = false
+        }
+        const activeRun = this.debounce(run, 300)
         document.getElementById(id + '-btn').addEventListener('click', function () {
             let numDOM = document.getElementById(id + '-num');
             numDOM.innerHTML = parseInt(numDOM.innerHTML) + 1;
             browserCounter += 1;
-            if (browserCounter > trigger_every) {
+            if (!hasThanks && browserCounter > trigger_every) {
                 trigger_fun();
+                hasThanks = true
             }
+            activeRun()
         });
-        document.getElementById(id + '-btn').addEventListener('mouseout', function () {
-            updateRemote(key, browserCounter);
-            counter += browserCounter;
-            browserCounter = 0;
-        })
+
+
 
         let fetchRemote = function (key, id) {
             let Applause = AV.Object.extend('Applause');
@@ -110,5 +117,33 @@ class ApplauseEasy {
                 }
             )
         }
+    }
+
+    getKey(id) {
+        let pathname = window.location.pathname
+        if (pathname.includes("/page/")) {
+            pathname = '/'
+        }
+        return pathname + '#' + id
+    }
+    /**
+ * 防抖函数
+ * @param {Function} func 需要防抖的函数
+ * @param {number} delay 延迟时间（毫秒）
+ * @returns {Function} 返回防抖后的函数
+ */
+    debounce(func, delay = 300, flag = null) {
+        let timer = null;
+
+        return function (...args) {
+            // 如果已有定时器存在，则清除之前的定时器
+            if (timer) clearTimeout(timer);
+
+            // 重新设置定时器
+            timer = setTimeout(() => {
+                func.apply(flag || this, args); // 确保正确的 this 上下文
+                timer = null;
+            }, delay);
+        };
     }
 }
