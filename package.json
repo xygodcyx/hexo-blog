@@ -12,9 +12,14 @@
     "version": "5.4.2"
   },
   "dependencies": {
+    "bluebird": "^3.7.2",
     "cheerio": "^1.1.2",
+    "chokidar": "^4.0.3",
+    "dir-resolve": "^1.0.2",
+    "graceful-fs": "^4.2.11",
     "hexo": "^5.4.0",
     "hexo-browsersync": "^0.3.0",
+    "hexo-fs": "^5.0.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-feed": "^3.0.0",
@@ -23,6 +28,7 @@
     "hexo-generator-tag": "^1.0.0",
     "hexo-log": "^4.1.0",
     "hexo-pagination": "^4.0.0",
+    "hexo-prism-plugin": "^2.3.0",
     "hexo-renderer-ejs": "^1.0.0",
     "hexo-renderer-marked": "^4.1.0",
     "hexo-renderer-pug": "^2.0.0",
@@ -34,6 +40,8 @@
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
     "moment": "^2.30.1",
-    "picocolors": "^1.1.1"
+    "node-prismjs": "^0.1.2",
+    "picocolors": "^1.1.1",
+    "prismjs": "^1.30.0"
   }
 }

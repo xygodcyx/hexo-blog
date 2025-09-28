@@ -144,7 +144,7 @@ google_track_id: UA-11111111-1
 
 # Math parser
 # Math renderer has been moved to KaTeX now.
-math: false
+math: true
 
 # Copyright
 # If set, a copyright line will be added at the bottom of each post
