@@ -13,13 +13,13 @@ class ApplauseEasy {
         let browserCounter = 0;
         if (!AV) { console.log('AV module is not registered.') }
         try {
-            AV.init(appId, appKey);
+            AV.init({ appId, appKey, serverURLs: "https://leancloud.cn", });
         }
         catch (err) {
             console.log(err);
         }
 
-        document.getElementById(id).innerHTML = `<div class="applause-number"><span id="${id + '-num'}">0</span></div>
+        document.getElementById(id).innerHTML = `<div class="applause-number"><span id="${id + '-num'}">0</span><span>次很棒</span></div>
             <div class="applause-container">
                 <div class="applause-wrapper">
                 <img id="${id + '-btn'}" src="${img_src}" style="width: ${img_width}; height: ${img_height}; "/>
