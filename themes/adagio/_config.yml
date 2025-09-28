@@ -8,8 +8,8 @@
 #         The value for these two should be url or relative url to a picture.
 #         If img_banner is false, no banner image will be used.
 img_banner: true
-img_banner_large: /img/banner.png
-img_banner_small: /img/banner.png
+img_banner_large: http://image-cdn.quhou.top/image/banner.png
+img_banner_small: http://image-cdn.quhou.top/image/banner.png
 
 # Logo: The logo will appear on every page except for the index page.
 #       If your logo is a picture, please specify the url for the logo at logo_url.
@@ -43,7 +43,7 @@ navbar_items:
 SEOTitle: XyGod
 
 # favicon: specify your favicon as a path to .ico file.
-favicon: /img/face.png
+favicon: http://image-cdn.quhou.top/image/face.png
 
 # Social media: link to your social media in the sidebar or footbar.
 # For media types, you can choose from 'github', 'pinterest', 'facebook', 'linkedin',
@@ -72,7 +72,7 @@ quora_username:        xxxxx
 sidebar_applause_easy: true
 applause_easy_appId: Rut3rqcEtcoHzeZmzHIHmEaw-gzGzoHsz
 applause_easy_appKey: Goyr6nvk7Uw6y9hQNrrhvzim
-clap_button: /img/clap.png
+clap_button: http://image-cdn.quhou.top/image/clap.png
 
 # Add a tag cloud to the top of the sidebar.
 sidebar_tag_cloud: true
@@ -88,7 +88,7 @@ trending:
 # Specify the avatar picture url in avatar_link
 # Add some word to the description.
 sidebar_about_me: true
-sidebar_avatar_link: /img/face.png
+sidebar_avatar_link: http://image-cdn.quhou.top/image/face.png
 sidebar_avatar_alt: alt
 sidebar_about_description: The owner of this website.
 
