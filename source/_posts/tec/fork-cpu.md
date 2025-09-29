@@ -28,18 +28,4 @@ date: 2025-09-28 10:11:35
 
 那么表达式为：
 
-\[ \begin{equation} a x^3 + b x^2 + c x + d = 0, a \neq 0 \end{equation} \]
-
-库存
-
-生产机器------------仓库
-保证仓库里的货物不多也不少 算法动态调整生产机器是否运行
-
-多少
-对比
-
-人工与算法的对比
-
-人工
-
-平台
+\[ \begin{aligned} S=\overline{A} B + A \overline{B} \end{aligned} \]
