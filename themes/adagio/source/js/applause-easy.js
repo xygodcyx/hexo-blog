@@ -1,8 +1,25 @@
 class ApplauseEasy {
     constructor(app) {
-        let id = app.id;
         let appId = app.appId;
         let appKey = app.appKey;
+        if (typeof AV !== 'undefined' && AV.applicationId) {
+            console.log('LeanCloud SDK already initialized, skipping...');
+            // 使用已初始化的AV实例
+            console.log(AV.applicationId)
+            this.setupApplaud(app);
+            return;
+        }
+        if (!AV) { console.log('AV module is not registered.') }
+        try {
+            AV.init({ appId, appKey, serverURLs: "https://shared.lc-cn-n1-shared.com", });
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+
+    setupApplaud(app) {
+        let id = app.id;
         let img_src = app.img_src;
         let img_width = app.img_width;
         let img_height = app.img_height;
@@ -12,14 +29,6 @@ class ApplauseEasy {
         let key = this.getKey(id);
         let browserCounter = 0;
         let hasThanks = false
-        if (!AV) { console.log('AV module is not registered.') }
-        try {
-            AV.init({ appId, appKey, serverURLs: "https://leancloud.cn", });
-        }
-        catch (err) {
-            console.log(err);
-        }
-
         document.getElementById(id).innerHTML = `<div class="applause-number"><span id="${id + '-num'}">0</span><span>次很棒</span></div>
             <div class="applause-container">
                 <div class="applause-wrapper">

@@ -2,6 +2,9 @@
     new Valine({
         el: "#vcomment",
         appId: "<%- theme.valine_appId %>",
-        appKey: "<%- theme.valine_appKey %>"
+        appKey: "<%- theme.valine_appKey %>",
+        serverURLs: "https://shared.lc-cn-n1-shared.com",
+        like: true, // 启用点赞功能
+        likeType: 1, // 0: 点赞样式，1: 心形样式
     })
 </script>

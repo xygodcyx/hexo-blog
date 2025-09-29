@@ -120,7 +120,7 @@ footer_content: Thanks for coming!
 
 # Use valine comment system.
 # For documentation: https://valine.js.org
-valine_comments: false
+valine_comments: true
 valine_appId: Rut3rqcEtcoHzeZmzHIHmEaw-gzGzoHsz
 valine_appKey: Goyr6nvk7Uw6y9hQNrrhvzim
 valine_placeholder: ~
