@@ -32,7 +32,7 @@ excerpt: 多人合作流程
 ## 常用命令
 
 ```shell
- 暂存：git add . #注：git add filename可以指定尭暂存的文件
+ 暂存：git add . #注：git add filename可以指定要暂存的文件
  提交：git commit -am"本次开发的总结" #注：一定要写清楚，方便版本回退时查找
  推送：git push #注：第一次提交要写git push origin 分支名称
  拉取：git pull

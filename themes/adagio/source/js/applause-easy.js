@@ -11,6 +11,7 @@ class ApplauseEasy {
         if (!AV) { console.log('AV module is not registered.') }
         try {
             AV.init({ appId, appKey, serverURLs: "https://shared.lc-cn-n1-shared.com", });
+            this.setupApplaud(app);
         }
         catch (err) {
             console.log(err);

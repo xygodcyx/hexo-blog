@@ -128,7 +128,7 @@ valine_placeholder: ~
 # CDN for the static contents.
 # If use_cdn is false, the js files in the source directory will be served.
 # If use_cdn is true, you should specify cdn provider.
-# You can use 'bootcdn' (better in China) or 'cdnjs' (better outside China) (except bootstrap.css).
+# You can use 'bootcdn' (better in China) or 'cdjs' (better outside China) (except bootstrap.css).
 use_cdn: true
 cdn_provider: cdnjs
 
