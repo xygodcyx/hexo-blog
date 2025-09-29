@@ -5,7 +5,6 @@ class ApplauseEasy {
         if (typeof AV !== 'undefined' && AV.applicationId) {
             console.log('LeanCloud SDK already initialized, skipping...');
             // 使用已初始化的AV实例
-            console.log(AV.applicationId)
             this.setupApplaud(app);
             return;
         }
