@@ -71,10 +71,10 @@ prism_plugin:
   line_number: true   # 显示行号
   custom_css: false   # 禁用默认CSS（主题自带样式时用）
   
-syntax_highlight:
-  enable: true
-  theme: 'atom-one-dark'  # 可选主题：github, solarized-light, etc
-  line_number: true
+# syntax_highlight:
+#   enable: true
+#   theme: 'atom-one-dark'  # 可选主题：github, solarized-light, etc
+#   line_number: true
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -129,3 +129,6 @@ server:
   compress: true # 开启压缩
 
 markdown: 'default'
+
+marked:
+  escape: false

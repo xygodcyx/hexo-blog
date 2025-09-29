@@ -64,7 +64,9 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <% for (let item of theme.navbar_items) { %>
-                <li class="nav-item pl-2 pr-2 <% if ('/'+page.path == item.url || page.path == item.url || page.layout == item.layout) { %>active<% } %>">
+                    <% let path = page.path.replace('/','').replace('index.html',''); %>
+                <li class="nav-item pl-2 pr-2 <% if ('/' + path == item.url || path == item.url) { %>active<% } %>">
+                    <!-- <span><%- path %></span> -->
                     <a class="nav-link" href="<%- url_for(item.url) %>"><%- item.text %></a>
                 </li>
                 <% } %>
