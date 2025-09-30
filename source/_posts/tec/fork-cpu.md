@@ -28,4 +28,4 @@ date: 2025-09-28 10:11:35
 
 那么表达式为：
 
-\[ \begin{aligned} S=\overline{A} B + A \overline{B} \end{aligned} \]
+\begin{equation} S = \overline A + B \end{equation}

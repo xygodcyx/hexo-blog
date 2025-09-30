@@ -2,7 +2,6 @@ class ApplauseEasy {
     constructor(app) {
         let appId = app.appId;
         let appKey = app.appKey;
-        console.log(app)
         if (typeof AV !== 'undefined' && AV.applicationId) {
             console.log('LeanCloud SDK already initialized, skipping...');
             // 使用已初始化的AV实例
