@@ -3,6 +3,18 @@
  * Copyright 2018 - 2021, Hanlin Dong (self@hanlindong.com)
  * Licensed under MIT 
  */
+
+.highlighted {
+  background-color: rgba(255, 255, 0, 0.159);
+  border-radius: 20px;
+  scale: 1.06;
+  transition: all 0.3s ease;
+}
+
+.vcard {
+  transition: all 0.1s ease;
+}
+
 .index-card-box::before {
   content: '';
   position: absolute;

@@ -2,6 +2,7 @@ class ApplauseEasy {
     constructor(app) {
         let appId = app.appId;
         let appKey = app.appKey;
+        console.log(app)
         if (typeof AV !== 'undefined' && AV.applicationId) {
             console.log('LeanCloud SDK already initialized, skipping...');
             // 使用已初始化的AV实例
@@ -10,7 +11,7 @@ class ApplauseEasy {
         }
         if (!AV) { console.log('AV module is not registered.') }
         try {
-            AV.init({ appId, appKey, serverURLs: "https://shared.lc-cn-n1-shared.com", });
+            AV.init({ appId, appKey });
             this.setupApplaud(app);
         }
         catch (err) {

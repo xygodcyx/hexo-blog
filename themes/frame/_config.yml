@@ -64,7 +64,7 @@ valine: # valine setup guide: https://valine.js.org/quickstart.html
   appKey: # Your valine app Key
   lang: 'en'
   placeholder: 'Say something'
-  avatar: 'mp'
+  avatar: 'monsterid'
   meta: ['nick', 'mail']
 
 disqus: # disqus setup guide: https://help.disqus.com/en/articles/1717056-publisher-quick-start-guide
