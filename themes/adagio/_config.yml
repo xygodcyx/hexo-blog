@@ -14,9 +14,9 @@ img_banner_small: https://image-cdn.quhou.top/image/banner.png
 # Logo: The logo will appear on every page except for the index page.
 #       If your logo is a picture, please specify the url for the logo at logo_url.
 #       If you don't have a picture, just use some word as logo. set logo_url to ~ and then specify logo_word.
-logo_url: /img/face.png
-# logo_url: true
-# logo_word: XyGod
+# logo_url: /img/face.png
+logo_url: false
+logo_word: XG
 
 # Navbar: If you have pages other then the posts, you can create a navbar.
 #         The navbar will appear on medium and large screens, and folded to a menu button on small screens.
