@@ -1,7 +1,7 @@
 ---
 title: CPP学习笔记
 tags:
-  - 'C++'
+  - 'CPP'
 categories:
   - '技术'
 date: 2025-09-17 15:55:46

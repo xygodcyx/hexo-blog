@@ -1,7 +1,7 @@
 ---
 title: fork cpu
 tags:
-  - ''
+  - 'logicCircuit'
 categories:
   - ''
 date: 2025-09-28 10:11:35
