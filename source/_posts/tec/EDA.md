@@ -190,11 +190,36 @@ EDA工具设置
 点击New Finder按钮，再点击List搜索出之前创建的所有组件，再点击 >> 选择所有搜索出的组件，
 然后点击Ok，再次点击OK，接着对A、B、CI分组为input，对CO、S分组为output
 
-```
+mux2to1:
+
+``` verilog
 module mux2to1 (out, a, b, sel);
  input a,b,sel;
  output out;
  wire out;
  assign out = (sel)?b:a;
 endmodule
+```
+
+mux8to1:
+
+``` verilog
+module mux8to1 (out, a, sel,en);
+ input en;
+ input [7:0] a; 
+ input [2:0]sel;
+ output out;
+ reg out;
+ always
+ begin
+ if (en==1)out=0;
+    else 
+ case(sel)
+ 'h0: out=a[0];'h1: out=a[1];'h2: out=a[2];'h3: out=a[3];
+ 'h4: out=a[4];'h5: out=a[5];'h6: out=a[6];'h7: out=a[7];
+ default: out=0;
+ endcase
+ end
+endmodule
+
 ```
