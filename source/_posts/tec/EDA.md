@@ -190,6 +190,8 @@ EDA工具设置
 点击New Finder按钮，再点击List搜索出之前创建的所有组件，再点击 >> 选择所有搜索出的组件，
 然后点击Ok，再次点击OK，接着对A、B、CI分组为input，对CO、S分组为output
 
+再设置一下频率，然后直接点击模拟就行了
+
 ## 5.1 verilog代码
 
 mux2to1:
