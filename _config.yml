@@ -67,7 +67,7 @@ highlight:
 
 prism_plugin:
   mode: 'preprocess'  # 预处理模式
-  theme: 'tomorrow'   # 主题名
+  theme: 'default'   # 主题名
   line_number: true   # 显示行号
   custom_css: false   # 禁用默认CSS（主题自带样式时用）
   

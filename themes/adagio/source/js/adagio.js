@@ -56,8 +56,6 @@ function customCursor() {
 customCursor()
 
 
-
-
 function startPixelIdleAnimation(options = {
     imageSrc: "/img/face.jpg", // 本地图片路径
     density: 13,          // 点密度（分辨率）
