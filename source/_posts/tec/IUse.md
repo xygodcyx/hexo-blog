@@ -71,12 +71,13 @@ excerpt: 记录一下自己常用的工具，将来换电脑时可以快速配�
 
 ``` bash
 # 初始化 oh-my-posh（注意替换你的主题路径）
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\kushal.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\blueish.omp.json" | Invoke-Expression
 
 # === 联想功能 ===
 Import-Module PSReadLine
 Set-PSReadLineOption -PredictionSource HistoryAndPlugin
-# Set-PSReadLineOption -PredictionViewStyle ListView
+Set-PSReadLineOption -PredictionViewStyle ListView
+Set-PSReadLineKeyHandler -Key RightArrow -Function AcceptSuggestion
 
 # === AI（可选）===
 # Import-Module Az.Tools.Predictor
@@ -109,20 +110,27 @@ function gg {
 }
 
 # === 项目常用命令别名 ===
-Set-Alias i  'pnpm install'
-Set-Alias d  'npm run dev'
-Set-Alias b  'npm run build'
-Set-Alias t  'npm run test'
-Set-Alias p  'npm run preview'
-Set-Alias s  'npm run start'
-Set-Alias u  'npm update'
-Set-Alias x  'nx'
 
+function i  { pnpm install }
+function d  { npm run dev }
+function b  { npm run build }
+function server  { npm run server }
+function hexodeploy  { hexo clean & hexo g & hexo deploy }
+function hexorun  { hexo clean & hexo g & hexo s }
+function t  { npm run test }
+function p  { npm run preview }
+function start  { npm run start }
+function u  { npm update }
+function x  { nx }
+# 打开资源管理器
+function e  { explorer }
 # === 目录跳转别名 ===
-Function ..  { Set-Location .. }
-Function ... { Set-Location ../.. }
-Function cc  { Set-Location E:\ }
-Function c   { code ./ }
+function ..  { Set-Location .. }
+function ... { Set-Location ../.. }
+function cc  { Set-Location E:\ }
+function c   { code ./ }
+function blog { code E:\xygod\hexo-blog\source\ }
+# function iuse { code E:\1web_project\quhou-blog-reset\docs\posts\使用过的工具备份\IUse.md }
 
 # === 文件列表别名 ===
 function Format-Size {
@@ -170,8 +178,18 @@ Function h    { Get-History }
 Function path { $env:PATH -split ";" }
 
 # === 快捷编辑配置文件 ===
-Function eb { code $PROFILE }
-Function rb { . $PROFILE }
+Function edit { code $PROFILE }
+Function reload { . $PROFILE }
+
+# Hexo添加博客
+function hexonew  { 
+  param (
+    [Parameter(Mandatory=$true)]
+    [string]$Title
+  )
+
+  hexo new $Title
+}
 
 # Git 快捷提交别名
 function gac {
@@ -184,6 +202,7 @@ function gac {
   git commit -m $Message
   git push
 }
+
 function gcf {
   param (
     [Parameter(Mandatory=$true)]
@@ -193,6 +212,78 @@ function gcf {
   git commit --amend -m $Message
   git push --force
 }
+
+# 添加到系统 PATH 的函数
+function ap {
+    [CmdletBinding(DefaultParameterSetName = 'User')]
+    param (
+        [Parameter(Mandatory = $true, Position = 0)]
+        [string]$PathToAdd,
+
+        [Parameter(ParameterSetName = 'User', Mandatory = $false)]
+        [switch]$u,
+
+        [Parameter(ParameterSetName = 'System', Mandatory = $false)]
+        [switch]$s,
+
+        [Parameter(Mandatory = $false)]
+        [switch]$p
+    )
+
+    $scope = if ($s) { "系统" } else { "用户" }
+    $regPath = if ($s) {
+        "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment"
+    } else {
+        "HKCU:\Environment"
+    }
+
+    try {
+        $prop = Get-ItemProperty -Path $regPath -Name Path -ErrorAction Stop
+        $existingPath = $prop.Path
+        if (-not $existingPath) { $existingPath = "" }
+    } catch {
+        Write-Host "无法读取 $scope PATH 环境变量："
+        Write-Host $_.Exception.Message -ForegroundColor Red
+        return
+    }
+
+    $existing = $existingPath -split ";" | Where-Object { $_ -ne "" }
+
+    if ($existing -contains $PathToAdd) {
+        Write-Host "该路径已存在于 $scope PATH："
+        Write-Host $PathToAdd
+        return
+    }
+
+    $newPath = ($existing + $PathToAdd | Where-Object { $_ -ne "" }) -join ";"
+    try {
+        Write-Host "添加中..."
+        Set-ItemProperty -Path $regPath -Name Path -Value $newPath -ErrorAction Stop
+        Write-Host "已添加路径到 $scope PATH："
+        Write-Host $PathToAdd
+    } catch {
+        Write-Host "添加到 $scope PATH 时出错："
+        Write-Host $_.Exception.Message -ForegroundColor Red
+        return
+    }
+
+    if ($p) {
+        try {
+            Write-Host "正在广播环境变量更改..."
+            $sig = '[DllImport("user32.dll",SetLastError=true)] public static extern int SendMessageTimeout(IntPtr hWnd, int Msg, UIntPtr wParam, string lParam, int fuFlags, int uTimeout, out UIntPtr lpdwResult);'
+            Add-Type -Namespace Win32 -Name NativeMethods -MemberDefinition $sig -ErrorAction SilentlyContinue
+            [void][Win32.NativeMethods]::SendMessageTimeout([intptr]0xffff, 0x1A, [uintptr]0, "Environment", 2, 5000, [ref]([uintptr]0))
+            Write-Host "广播完成"
+        } catch {
+            Write-Host "广播时出错："
+            Write-Host $_.Exception.Message -ForegroundColor Red
+        }
+    } else {
+        Write-Host "未广播设置更改，重启终端后生效"
+    }
+}
+
+
 
 # === 查看所有别名 ===
 Function as { Get-Alias | Out-Host }
@@ -205,8 +296,116 @@ Function as { Get-Alias | Out-Host }
 ::: details setting.json
 
 ``` json
+
 {
-  // 终端字体
+  //vim配置
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "t",
+        "h"
+      ],
+      "commands": [
+        ":tabp"
+      ]
+    },
+    {
+      "before": [
+        "t",
+        "l"
+      ],
+      "commands": [
+        ":tabn"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "d"
+      ],
+      "after": [
+        "d",
+        "d"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "W",
+      ],
+      "after": [
+        "g",
+        "U",
+        "a",
+        "w",
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "w",
+      ],
+      "after": [
+        "g",
+        "u",
+        "a",
+        "w",
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "~",
+      ],
+      "after": [
+        "g",
+        "~",
+        "~",
+      ]
+    },
+    {
+      "before": [
+        "<C-n>"
+      ],
+      "commands": [
+        ":nohl"
+      ]
+    },
+    {
+      "before": [
+        "K"
+      ],
+      "commands": [
+        "lineBreakInsert"
+      ],
+      "silent": true
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  // To improve performance
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
   "security.workspace.trust.untrustedFiles": "open",
   "files.associations": {
     "*.cs": "csharp",
@@ -259,7 +458,7 @@ Function as { Get-Alias | Out-Host }
     }
   },
   "editor.formatOnType": true,
-  "editor.minimap.autohide": true,
+  "editor.minimap.autohide": "mouseover",
   "editor.tabCompletion": "on",
   "editor.mouseWheelZoom": true,
   "editor.guides.bracketPairs": true,
@@ -279,10 +478,13 @@ Function as { Get-Alias | Out-Host }
   "terminal.integrated.profiles.windows": {
     "PowerShell 7": {
       "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
-    }
+    },
+    "ESP-IDF 6.0 PowerShell": {
+      "path": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -ExecutionPolicy Bypass -NoExit -File \"D:/EspressifTools/Initialize-Idf.ps1\" -IdfId esp-idf-eb137817a713de92690f1cfa4645c02d"
+    },
   },
-  "terminal.integrated.fontFamily": "MesloLGM Nerd Font",
   "terminal.integrated.defaultProfile.windows": "PowerShell 7",
+  "terminal.integrated.fontFamily": "MesloLGM Nerd Font",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "prettier.singleQuote": true,
   "prettier.singleAttributePerLine": true,
@@ -311,7 +513,7 @@ Function as { Get-Alias | Out-Host }
   },
   "xml.symbols.maxItemsComputed": 50000,
   "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "search.followSymlinks": false,
   "git.autorefresh": false,
@@ -325,6 +527,7 @@ Function as { Get-Alias | Out-Host }
   "python.createEnvironment.trigger": "off",
   "cSpell.userWords": [
     "exceljs",
+    "hexo",
     "Konva"
   ],
   "editor.linkedEditing": true,
@@ -345,11 +548,10 @@ Function as { Get-Alias | Out-Host }
   "codingcopilot.enableCodelens": false,
   "codingcopilot.enableWorkspaceRules": false,
   "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    "editor.defaultFormatter": "jinxdash.prettier-rust"
   },
   "rust-analyzer.restartServerOnConfigChange": true,
   "editor.fontLigatures": true,
-  "workbench.colorTheme": "Shades of Purple (Super Dark)",
   "workbench.colorCustomizations": {
     "[Vira*]": {
       "toolbar.activeBackground": "#80CBC426",
@@ -412,23 +614,79 @@ Function as { Get-Alias | Out-Host }
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.html-language-features"
   },
   "prettier.semi": false,
   "[json]": {
-    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "workbench.secondarySideBar.showLabels": false,
   "[css]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "vscode.css-language-features"
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.sideBar.location": "right",
   "editor.codeLensFontFamily": "InputMono, HACK, Courier New, monospace",
   "editor.inlineSuggest.showToolbar": "always",
-  "workbench.panel.showLabels": false,
   "lldb.suppressUpdateNotifications": true,
+  "liveSassCompile.settings.watchOnLaunch": true,
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/dist/css",
+      "savePathReplacementPairs": null
+    }
+  ],
+  "fittencode.languagePreference.displayPreference": "zh-cn",
+  "fittencode.languagePreference.commentPreference": "zh-cn",
+  "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
+  "workbench.editor.empty.hint": "hidden",
+  "[vue]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "extensions.ignoreRecommendations": true,
+  "workbench.colorTheme": "True Godot",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "git.confirmSync": false,
+  "workbench.editorAssociations": {
+    "git-rebase-todo": "default"
+  },
+  "[jade]": {
+    "editor.defaultFormatter": "ducfilan.pug-formatter"
+  },
+  "[stylus]": {
+    "editor.defaultFormatter": "thisismanta.stylus-supremacy"
+  },
+  "editor.minimap.renderCharacters": false,
+  "prettier.printWidth": 60,
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+  "pasteImage.path": "${projectRoot}/assets/${currentFileNameWithoutExt}",
+  "pasteImage.insertPattern": "![${imageFileName}](/assets/${currentFileNameWithoutExt}/${imageFileName})",
+  "pasteImage.defaultName": "YMMDDHHmmss",
+  "pasteImage.namePrefix": "",
+  "git.ignoreRebaseWarning": true,
+  "explorer.confirmPasteNative": false,
+  "[gdscript]": {
+    "editor.defaultFormatter": "geequlim.godot-tools"
+  },
+  "files.exclude": {
+    "**/*.import": true,
+    "**/*.tmp": true,
+    "**/*.uid": true
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "python.analysis.typeCheckingMode": "standard",
+  "terminal.integrated.env.windows": {},
+  "platformio-ide.customPATH": "",
+  "window.confirmSaveUntitledWorkspace": false,
 }
+
 ```
 
 :::
