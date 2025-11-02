@@ -26,7 +26,8 @@ excerpt: 记录一下自己常用的工具，将来换电脑时可以快速配�
 3. 翻译软件：[网易有道翻译](https://fanyi.youdao.com/download-Windows?keyfrom=fanyiweb_navigation), 界面简洁、功能强大。唯一需要注意的是记得关闭自带的快捷键，划词翻译也可以考虑关闭了，这个功能对程序员来说就是累赘，经常莫名其妙的弹出导致误点击
 
 4. 下载软件：[IDM](https://www.internetdownloadmanager.com/download.html)，注意配置UA（netdisk;P2SP;3.0.20.88），以及设置idm不要自动下载浏览器里的文件，这很烦人
-5. 代理软件：[Clash](https://ikuuu.one/user/tutorial?os=windows&client=cfw)，这个提供商提供的软件几乎是开箱即用的，无需对国外和国内网站进行单独配置
+
+5. 代理软件：[Clash](https://ikuuu.de/user/tutorial?os=windows&client=cfw)，这个提供商提供的软件几乎是开箱即用的，无需对国外和国内网站进行单独配置
 
 6. 终端美化：[oh-my-posh](https://ohmyposh.dev/)整天对着黑框框敲命令也太不爽了，对了，安装好oh-my-posh后不要忘记在vscode里设置一下终端字体（字体不要忘记安装了）
 
@@ -55,6 +56,8 @@ excerpt: 记录一下自己常用的工具，将来换电脑时可以快速配�
     ```
 
     :::
+
+7.ssh远程连接软件 [termius](https://termius.com/)，界面很好看
 
 ## 日常使用软件
 
