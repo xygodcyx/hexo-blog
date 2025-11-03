@@ -3,9 +3,9 @@
         <div class="collapse navbar-collapse" id="navbar-sm">
             <% if (theme.navbar) { %>
             <% for (let item of theme.navbar_items) { %>
-            <div class="navbar-nav">
-                <a href="<%- item.url %>" class="nav-item nav-link"><%- item.text %></a>
-            </div>
+                <div class="navbar-nav">
+                    <a href="<%- item.url %>" class="nav-item nav-link"><%- item.text %></a>
+                </div>
             <% }} %>
         </div>
     </nav>
@@ -70,11 +70,33 @@
                     <a class="nav-link" href="<%- url_for(item.url) %>"><%- item.text %></a>
                 </li>
                 <% } %>
+                <li class="nav-item pl-2 pr-2">
+                    <button class="search-btn" id="open-search" title="搜索 (Ctrl+Shift+K)">
+                        <!-- <span class="search-icon">🔍</span> -->
+                        <span class="search-text">搜索</span>
+                        <span class="shortcut-key">Ctrl Shift K</span>
+                    </button>
+                </li>
             </ul>
         </div>
         <% } %>
     </nav>
 </div>
 
+<div id="search-modal" class="search-modal" role="dialog" aria-hidden="true">
+  <div class="search-dialog" role="document">
+    <div class="search-header">
+      <input
+        type="text"
+        id="search-input"
+        class="search-input"
+        placeholder="搜索文章标题或内容..."
+        autocomplete="off"
+      />
+      <button class="search-close" id="close-search" aria-label="关闭搜索">&times;</button>
+    </div>
+    <div id="search-results" class="search-results"></div>
+  </div>
+</div>
 
 

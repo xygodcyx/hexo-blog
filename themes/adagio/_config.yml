@@ -50,22 +50,22 @@ favicon: /img/face.jpg
 #     'researchgate', 'twitter', 'zhihu', 'quora'
 # It's better if your choose four social networks.
 media_types:
-    - github
-    - bilibili
-    # - facebook
-    # - pinterest
-    # - linkedin
+  - github
+  - bilibili
+  # - facebook
+  # - pinterest
+  # - linkedin
 # You should find the usernames from the url of your personal page.
 # Note: it's not the login username!
-github_username:       xygodcyx
-bilibili_uid:          1308065752
-pinterest_username:    xxxxx
-facebook_username:     xxxxx
-linkedin_username:     xxxxx
+github_username: xygodcyx
+bilibili_uid: 1308065752
+pinterest_username: xxxxx
+facebook_username: xxxxx
+linkedin_username: xxxxx
 researchgate_username: xxxxx
-twitter_username:      xxxxx
-zhihu_username:        xxxxx
-quora_username:        xxxxx
+twitter_username: xxxxx
+zhihu_username: xxxxx
+quora_username: xxxxx
 
 # Add an applause button to the side bar.
 # Documentation: https://github.com/Hanlin-Dong/applause-easy
@@ -107,11 +107,11 @@ sidebar_archive: true
 # Add friend links to the sidebar.
 # For each friend, specify the text what will be desplayed with 'title', and it's corresponding url as 'href'.
 sidebar_friends: false
-friends: 
-    -   title: Hexo
-        href: https://hexo.io
-    -   title: Github
-        href: https://github.com
+friends:
+  - title: Hexo
+    href: https://hexo.io
+  - title: Github
+    href: https://github.com
 
 # The content that will appear in the footer.
 footer_content: Thanks for coming!
@@ -130,7 +130,6 @@ valine_placeholder: ~
 use_cdn: true
 cdn_provider: cdnjs
 
-
 # Analytics
 # For Baidu analytics, specify the url given.
 baidu_analytics: true
@@ -139,7 +138,6 @@ baidu_url: https://hm.baidu.com/hm.js?123456789
 google_analytics: true
 google_track_id: UA-11111111-1
 
-
 # Math parser
 # Math renderer has been moved to KaTeX now.
 math: true
@@ -147,3 +145,9 @@ math: true
 # Copyright
 # If set, a copyright line will be added at the bottom of each post
 post_copyright: ~
+
+search:
+  path: search.json
+  field: post
+  format: html
+  limit: 10000

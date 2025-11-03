@@ -35,7 +35,7 @@ lang: en
 
 过程：
 
-```sh
+``` bash
 expression → expression "+" term
             → 3 + term
             → 3 + (term "*" factor)

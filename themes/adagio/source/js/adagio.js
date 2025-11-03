@@ -178,7 +178,9 @@ function createCopyButton(pre) {
   }, 1000)
   button.addEventListener('click', async () => {
     try {
-      await navigator.clipboard.writeText(pre.innerText.trim())
+      await navigator.clipboard.writeText(
+        pre.innerText.trim()
+      )
       button.textContent = 'Copied!'
       changeButtonText()
     } catch (error) {
@@ -189,3 +191,4 @@ function createCopyButton(pre) {
 }
 
 addCopyButton()
+
