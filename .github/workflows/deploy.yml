@@ -37,8 +37,8 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             bun install
-            bunx hexo clean
-            bunx hexo g
+            npx hexo clean
+            npx hexo g
             sudo rm -rf /var/www/blog/*
             sudo cp -r /root/code/hexo-blog/public/* /var/www/blog/
             sudo systemctl reload nginx

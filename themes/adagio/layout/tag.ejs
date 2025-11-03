@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row mt-3">
             <div class="col-md-9">
-                <% page.posts.each(function(post) { %>
+                <% (page.posts || []).each(function(post) { %>
                 <div class="row">
                     <div class="col">
                         <a href="<%- url_for(post.path) %>" class="index-card-link">
