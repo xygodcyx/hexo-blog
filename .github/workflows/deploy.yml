@@ -6,26 +6,9 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
-
-      - name: Install Hexo
-        run: npm install -g hexo-cli
-
-      - name: Install dependencies and generate site
-        run: |
-          npm install
-          npx hexo generate
-
       - name: Deploy to server
         uses: appleboy/ssh-action@v0.1.7
         with:
