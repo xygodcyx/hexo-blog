@@ -1,11 +1,31 @@
+<%
+function randomPost() {
+  const res = []
+  for(const post of site.posts.toArray()) {
+    if(Math.random() < 0.2){
+      res.push(post) 
+    }
+    if(res.length > 6){
+      return res
+    }
+  }
+  return res
+}
+%>
+
 <div class="row">
     <div class="col">
       <h6>TRENDING POSTS</h6>
       <div class="trending">
         <ul>
-        <% theme.trending.forEach((trend) => { %>
+        <% (theme.trending || []).forEach((trend) => { %>
           <li><a href="<%- trend.path %>"><%- trend.text %></a></li>
         <% }) %>
+        <% if ((theme.trending || []).length < 6) { %>
+           <% randomPost().forEach((page) => { %>
+             <li><a href="<%- page.path %>"><%- page.title %></a></li>
+           <% }) %>
+        <% } %>
         </ul>
       </div>
     </div>

@@ -81,8 +81,6 @@ sidebar_tag_cloud: true
 # The path should be specified to urls of your own posts.
 sidebar_trending: true
 trending:
-    -   path: http://www.quhou.top
-        text: XyGod's website
 
 # Add a about me block to the sidebar.
 # Specify the avatar picture url in avatar_link
