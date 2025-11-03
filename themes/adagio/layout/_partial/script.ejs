@@ -21,6 +21,8 @@
     <% if (theme.math) { %>
     <script defer src="<%- url_for('/js/katex.min.js') %>"></script>
     <script defer src="<%- url_for('/js/auto-render.min.js') %>" onload="renderMathInElement(document.body);"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
     <% } %>
 <% } %>
 
@@ -29,6 +31,15 @@
 <!-- <%- js('/js/valine.min2.js') %> -->
 <!-- <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script> -->
 <%- js('/js/applause-easy.js') %>
+
+<script src="/js/highlight.min.js"></script>
+
+<script src="/js/gdscript.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+
+<!-- and it's easy to individually load additional languages -->
+    
 <script>
 $(document).ready(function() {
     new ApplauseEasy({

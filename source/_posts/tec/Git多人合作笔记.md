@@ -11,27 +11,27 @@ excerpt: 多人合作流程
 
  设置用户名：
 
- ``` shell
+ ``` bash
  git config --global  user.name "you name"
  ```
 
  设置邮箱：
 
- ``` shell
+ ``` bash
  git config --global user.email "you email"
  ```
 
  生成密钥：
 
- ``` shell
+ ``` bash
  ssh-keygen -t rsa -C "you email"
  ```
 
- 在密钥默认保存路径`C:\Users\Administrator\.ssh`中找到`id_rsa.pub`文件，复制其内容粘贴到 [SSH and GPG keys](https://github.com/settings/keys) 的SSH keys中，记得New SSH key
+在密钥默认保存路径`C:\Users\Administrator\.ssh`中找到`id_rsa.pub`文件，复制其内容粘贴到 [SSH and GPG keys](https://github.com/settings/keys) 的SSH keys中，记得New SSH key
 
 ## 常用命令
 
-```shell
+``` bash
  暂存：git add . #注：git add filename可以指定要暂存的文件
  提交：git commit -am"本次开发的总结" #注：一定要写清楚，方便版本回退时查找
  推送：git push #注：第一次提交要写git push origin 分支名称
