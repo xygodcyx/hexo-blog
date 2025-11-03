@@ -161,10 +161,11 @@ script部分就是在github action里通过ssh远程连接对ubuntu服务器执�
 
 ``` sh
 cd /root/code/hexo-blog
-git reset --hard
-git pull origin main
+git fetch origin main
+git reset --hard origin/main
 bun install
-hexo clean & hexo g
+bunx hexo clean
+bunx hexo g
 sudo rm -rf /var/www/blog/*
 sudo cp -r /root/code/hexo-blog/public/* /var/www/blog/
 sudo systemctl reload nginx
