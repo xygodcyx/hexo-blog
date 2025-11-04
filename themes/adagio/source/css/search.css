@@ -192,7 +192,7 @@
 
 /* 禁止背景滚动 */
 body.modal-open {
-    overflow: hidden;
+    /* overflow-x: hidden; */
 }
 
 

@@ -133,3 +133,9 @@ markdown: 'default'
 
 marked:
   escape: false
+
+search:
+  path: search.json
+  field: all
+  format: striptags
+  limit: 10000

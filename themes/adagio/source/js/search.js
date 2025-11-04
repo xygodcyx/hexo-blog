@@ -18,8 +18,9 @@ async function initSearch() {
   const fuse = new Fuse(data, {
     keys: ['title', 'content'],
     includeScore: true,
-    threshold: 1, // 模糊程度（越低越严格）
-    minMatchCharLength: 1,
+    threshold: 0.8, // 模糊程度（越低越严格）
+    useExtendedSearch: true,
+    minMatchCharLength: 0,
   })
 
   readerResult(data)
@@ -92,15 +93,24 @@ async function initSearch() {
         )
         return `
           <div class="search-item">
-            <a href="${post.url.slice(1)}">${post.title}</a>
-            <p>${content}...</p>
+            <a href="${
+              post.url[1] === '\/'
+                ? post.url.slice(1)
+                : post.url
+            }">${post.title}</a>
+            <p>${content}${
+          post.content.length === content.length
+            ? ''
+            : '...'
+        }
+            </p>
           </div>
         `
       })
       .join('')
   }
 
-  // ✅ 高亮函数（支持多个关键词）
+  // 高亮函数（支持多个关键词）
   function highlightKeyword(keywords) {
     if (!('CSS' in window) || !CSS.highlights) return
     CSS.highlights.clear()
@@ -143,7 +153,7 @@ async function initSearch() {
     }
   }
 
-  // ✅ 搜索逻辑 + 模糊匹配 + 多关键词高亮
+  // 搜索逻辑 + 模糊匹配 + 多关键词高亮
   input.addEventListener('input', e => {
     const keyword = e.target.value.trim().toLowerCase()
     resultsBox.innerHTML = ''
