@@ -262,9 +262,10 @@ ol.toc {
 }
 
 .article-text p a {
-  color: #212529;
   padding: 0.2rem 0.3rem;
-  text-decoration: underline;
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
 }
 
 table {
@@ -342,6 +343,8 @@ figcaption span {
 
 .nav-link {
   color: #6c757d;
+  cursor: pointer;
+  user-select: none;
 }
 
 .nav-pills .nav-link.active {

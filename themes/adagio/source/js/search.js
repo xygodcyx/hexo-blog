@@ -4,7 +4,7 @@ async function initSearch() {
   const res = await fetch('/search.json')
   const data = await res.json()
 
-  const openBtn = document.getElementById('open-search')
+  const openBtns = document.querySelectorAll('.open-search')
   const closeBtn = document.getElementById('close-search')
   const modal = document.getElementById('search-modal')
   const input = document.getElementById('search-input')
@@ -24,10 +24,11 @@ async function initSearch() {
   })
 
   readerResult(data)
-
-  openBtn.addEventListener('click', () => {
-    lastFocusedElement = document.activeElement
-    openModal()
+  openBtns.forEach(openBtn => {
+    openBtn.addEventListener('click', () => {
+      lastFocusedElement = document.activeElement
+      openModal()
+    })
   })
 
   closeBtn.addEventListener('click', closeModal)
@@ -92,12 +93,12 @@ async function initSearch() {
           )
         )
         return `
-          <div class="search-item">
+          <div class="search-result-item">
             <a href="${
-              post.url[1] === '\/'
+              post.url[1] === '/'
                 ? post.url.slice(1)
                 : post.url
-            }">${post.title}</a>
+            }" class='search-title-link'>${post.title}</a>
             <p>${content}${
           post.content.length === content.length
             ? ''

@@ -2,101 +2,102 @@
     <nav class="nav">
         <div class="collapse navbar-collapse" id="navbar-sm">
             <% if (theme.navbar) { %>
-            <% for (let item of theme.navbar_items) { %>
-                <div class="navbar-nav">
-                    <a href="<%- item.url %>" class="nav-item nav-link"><%- item.text %></a>
-                </div>
-            <% }} %>
+                <% for (let item of theme.navbar_items) { %>
+                    <div class="navbar-nav">
+                        <a href="<%- item.url %>" class="nav-item nav-link"><%- item.text %></a>
+                    </div>
+                    <% }} %>
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link open-search" title="搜索 (Ctrl+Shift+K)">
+                            <!-- <span class="search-icon">🔍</span> -->
+                            搜索
+                        </a>
+                    </div>
         </div>
     </nav>
 </div>
 <% if (index) { %>
-<div class="my-navbar d-md-none">
-    <% if (theme.navbar) { %>
-    <div class="nav pt-2 pl-1">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-sm"
-            aria-expanded="false" aria-label="Toggle Navigation">
-            <i class="fas fa-bars fa-lg"></i>
-        </button>
-    </div>
-    <% } %>
-</div>
-<% } else { %>
-<div class="d-flex d-md-none" style="width: 100%; background-color: #e9ecef">
-    <% if (theme.navbar) { %>
-    <div class="nav">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-sm"
-            aria-expanded="false" aria-label="Toggle Navigation">
-            <i class="fas fa-bars fa-lg"></i>
-        </button>
-    </div>
-    <% } %>
-    <nav class="navbar ml-auto">
-        <a class="navbar-brand" href="<%- url_for('/') %>">
-            <% if (theme.logo_url) { %>
-            <img class="logo" src="<%- url_for(theme.logo_url) %>" />
-            <% } else if (theme.logo_word) { %>
-            <%- theme.logo_word %>
-            <% } else { %>
-            HOME
-            <% } %>
-        </a>
-    </nav>
-</div>
-<% } %>
-
-<div class="container d-none d-md-block my-navbar">
-    <nav class="navbar navbar-expand-sm navbar-light bg-transparent">
-        <a class="navbar-brand <% if (index) { %>d-none<% } %>" href="<%- url_for('/') %>">
-            <% if (theme.logo_url) { %>
-            <img class="logo" src="<%- url_for(theme.logo_url) %>" />
-            <% } else if (theme.logo_word) { %>
-            <%- theme.logo_word %>
-            <% } else { %>
-            HOME
-            <% } %>
-        </a>
+    <div class="my-navbar d-md-none">
         <% if (theme.navbar) { %>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <% for (let item of theme.navbar_items) { %>
-                    <% let path = page.path.replace('/','').replace('index.html',''); %>
-                <li class="nav-item pl-2 pr-2 <% if ('/' + path == item.url || path == item.url) { %>active<% } %>">
-                    <!-- <span><%- path %></span> -->
-                    <a class="nav-link" href="<%- url_for(item.url) %>"><%- item.text %></a>
-                </li>
-                <% } %>
-                <li class="nav-item pl-2 pr-2">
-                    <button class="search-btn" id="open-search" title="搜索 (Ctrl+Shift+K)">
-                        <!-- <span class="search-icon">🔍</span> -->
-                        <span class="search-text">搜索</span>
-                        <span class="shortcut-key">Ctrl Shift K</span>
+            <div class="nav pt-2 pl-1">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-sm"
+                    aria-expanded="false" aria-label="Toggle Navigation">
+                    <i class="fas fa-bars fa-lg"></i>
+                </button>
+            </div>
+            <% } %>
+    </div>
+    <% } else { %>
+        <div class="d-flex d-md-none" style="width: 100%; background-color: #e9ecef">
+            <% if (theme.navbar) { %>
+                <div class="nav">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-sm"
+                        aria-expanded="false" aria-label="Toggle Navigation">
+                        <i class="fas fa-bars fa-lg"></i>
                     </button>
-                </li>
-            </ul>
+                </div>
+                <% } %>
+                    <nav class="navbar ml-auto">
+                        <a class="navbar-brand" href="<%- url_for('/') %>">
+                            <% if (theme.logo_url) { %>
+                                <img class="logo" src="<%- url_for(theme.logo_url) %>" />
+                                <% } else if (theme.logo_word) { %>
+                                    <%- theme.logo_word %>
+                                        <% } else { %>
+                                            HOME
+                                            <% } %>
+                        </a>
+                    </nav>
         </div>
         <% } %>
-    </nav>
-</div>
 
-<div id="search-modal" class="search-modal" role="dialog" aria-hidden="true">
-  <div class="search-dialog" role="document">
-    <div class="search-header">
-      <input
-        type="text"
-        id="search-input"
-        class="search-input"
-        placeholder="搜索文章标题或内容..."
-        autocomplete="off"
-      />
-      <button class="search-close" id="close-search" aria-label="关闭搜索">&times;</button>
-    </div>
-    <div id="search-results" class="search-results"></div>
-  </div>
-</div>
+            <div class="container d-none d-md-block my-navbar">
+                <nav class="navbar navbar-expand-sm navbar-light bg-transparent">
+                    <a class="navbar-brand <% if (index) { %>d-none<% } %>" href="<%- url_for('/') %>">
+                        <% if (theme.logo_url) { %>
+                            <img class="logo" src="<%- url_for(theme.logo_url) %>" />
+                            <% } else if (theme.logo_word) { %>
+                                <%- theme.logo_word %>
+                                    <% } else { %>
+                                        HOME
+                                        <% } %>
+                    </a>
+                    <% if (theme.navbar) { %>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <% for (let item of theme.navbar_items) { %>
+                                    <% let path=page.path.replace('/','').replace('index.html',''); %>
+                                        <li
+                                            class="nav-item pl-2 pr-2 <% if ('/' + path == item.url || path == item.url) { %>active<% } %>">
+                                            <!-- <span><%- path %></span> -->
+                                            <a class="nav-link" href="<%- url_for(item.url) %>"><%- item.text %></a>
+                                        </li>
+                                        <% } %>
+                                            <li class="nav-item pl-2 pr-2">
+                                                <button class="search-btn open-search" id="open-search"
+                                                    title="搜索 (Ctrl+Shift+K)">
+                                                    <!-- <span class="search-icon">🔍</span> -->
+                                                    <span class="search-text">搜索</span>
+                                                    <span class="shortcut-key">Ctrl Shift K</span>
+                                                </button>
+                                            </li>
+                            </ul>
+                        </div>
+                        <% } %>
+                </nav>
+            </div>
 
-
+            <div id="search-modal" class="search-modal" role="dialog" aria-hidden="true">
+                <div class="search-dialog" role="document">
+                    <div class="search-header">
+                        <input type="text" id="search-input" class="search-input" placeholder="搜索文章标题或内容..."
+                            autocomplete="off" />
+                        <button class="search-close" id="close-search" aria-label="关闭搜索">&times;</button>
+                    </div>
+                    <div id="search-results" class="search-results"></div>
+                </div>
+            </div>

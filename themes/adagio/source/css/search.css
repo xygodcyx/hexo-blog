@@ -27,6 +27,11 @@
     box-shadow: 0 2px 6px rgba(0, 123, 255, 0.15);
 }
 
+.search-btn.collapse-btn {
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
 .search-icon {
     font-size: 1rem;
     line-height: 1;
@@ -141,6 +146,8 @@
 
 /* 单项结果 */
 .search-result-item {
+    display: flex;
+    flex-direction: column;
     border-bottom: 1px solid #eee;
     padding: 12px 4px;
     transition: 0.2s;
@@ -151,6 +158,8 @@
 }
 
 .search-result-item a {
+    flex: 1;
+    width: 100%;
     font-weight: 600;
     color: var(--accent-color, #007bff);
     font-size: 16px;

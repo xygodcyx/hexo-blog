@@ -68,7 +68,7 @@ excerpt: 记录一下自己常用的工具，将来换电脑时可以快速配�
 
 ## 一些配置文件
 
-1. power shell 7.0（oh-my-bash的初始化、别名配置等）
+### power shell 7.0
 
 ::: details setting.json
 
@@ -294,7 +294,7 @@ Function as { Get-Alias | Out-Host }
 
 :::
 
-2. vscode设置（不一定是最新的）
+### vscode
 
 ::: details setting.json
 

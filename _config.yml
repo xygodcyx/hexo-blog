@@ -129,7 +129,20 @@ deploy:
 server:
   compress: true # 开启压缩
 
-markdown: 'default'
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+  plugins:
+    - markdown-it-container
+    # 你还可以加其他插件，例如：
+    # - markdown-it-task-lists
+    # - markdown-it-footnote
+    # - markdown-it-emoji
+
 
 marked:
   escape: false
@@ -139,3 +152,4 @@ search:
   field: post
   format: striptags
   limit: 10000
+
