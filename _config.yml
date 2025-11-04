@@ -136,6 +136,6 @@ marked:
 
 search:
   path: search.json
-  field: all
+  field: post
   format: striptags
   limit: 10000
