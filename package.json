@@ -19,7 +19,7 @@
     "dir-resolve": "^1.0.2",
     "fuse.js": "^7.1.0",
     "graceful-fs": "^4.2.11",
-    "hexo": "^5.4.0",
+    "hexo": "^8.1.1",
     "hexo-browsersync": "^0.3.0",
     "hexo-fs": "^5.0.0",
     "hexo-generator-archive": "^1.0.0",
