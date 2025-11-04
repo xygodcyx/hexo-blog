@@ -119,7 +119,7 @@ async function initSearch() {
 
     const ranges = []
     resultsBox
-      .querySelectorAll('.search-item')
+      .querySelectorAll('.search-result-item')
       .forEach(item => {
         const walker = document.createTreeWalker(
           item,

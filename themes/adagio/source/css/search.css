@@ -1,5 +1,5 @@
 ::highlight(search-highlight) {
-    background-color: yellow;
+    background-color: yellow !important;
     color: black;
     font-weight: bold;
     border-radius: 2px;
