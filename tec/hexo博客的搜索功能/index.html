@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="/img/face.jpg">
+    <title>hexo博客的搜索功能-XyGod</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" >
+    
+
+    
+<link rel="stylesheet" href="/css/adagio.css">
+
+    
+<link rel="stylesheet" href="/css/search.css">
+
+    
+<link rel="stylesheet" href="/css/tip.css">
+
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="XyGod" type="application/atom+xml">
+</head>
+
+    <body>
+        <div class="container-fluid">
+    <nav class="nav">
+        <div class="collapse navbar-collapse" id="navbar-sm">
+            
+                
+                    <div class="navbar-nav">
+                        <a href="/" class="nav-item nav-link">文章</a>
+                    </div>
+                    
+                    <div class="navbar-nav">
+                        <a href="/contact" class="nav-item nav-link">联系</a>
+                    </div>
+                    
+                    <div class="navbar-nav">
+                        <a href="/about" class="nav-item nav-link">关于</a>
+                    </div>
+                    
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link open-search" title="搜索 (Ctrl+Shift+K)">
+                            <!-- <span class="search-icon">🔍</span> -->
+                            搜索
+                        </a>
+                    </div>
+        </div>
+    </nav>
+</div>
+
+        <div class="d-flex d-md-none" style="width: 100%; background-color: #e9ecef">
+            
+                <div class="nav">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-sm"
+                        aria-expanded="false" aria-label="Toggle Navigation">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                </div>
+                
+                    <nav class="navbar ml-auto">
+                        <a class="navbar-brand" href="/">
+                            
+                                    XG
+                                        
+                        </a>
+                    </nav>
+        </div>
+        
+
+            <div class="container d-none d-md-block my-navbar">
+                <nav class="navbar navbar-expand-sm navbar-light bg-transparent">
+                    <a class="navbar-brand " href="/">
+                        
+                                XG
+                                    
+                    </a>
+                    
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                
+                                    
+                                        <li
+                                            class="nav-item pl-2 pr-2 ">
+                                            <!-- <span>tec/hexo博客的搜索功能/</span> -->
+                                            <a class="nav-link" href="/">文章</a>
+                                        </li>
+                                        
+                                    
+                                        <li
+                                            class="nav-item pl-2 pr-2 ">
+                                            <!-- <span>tec/hexo博客的搜索功能/</span> -->
+                                            <a class="nav-link" href="/contact">联系</a>
+                                        </li>
+                                        
+                                    
+                                        <li
+                                            class="nav-item pl-2 pr-2 ">
+                                            <!-- <span>tec/hexo博客的搜索功能/</span> -->
+                                            <a class="nav-link" href="/about">关于</a>
+                                        </li>
+                                        
+                                            <li class="nav-item pl-2 pr-2">
+                                                <button class="search-btn open-search" id="open-search"
+                                                    title="搜索 (Ctrl+Shift+K)">
+                                                    <!-- <span class="search-icon">🔍</span> -->
+                                                    <span class="search-text">搜索</span>
+                                                    <span class="shortcut-key">Ctrl Shift K</span>
+                                                </button>
+                                            </li>
+                            </ul>
+                        </div>
+                        
+                </nav>
+            </div>
+
+            <div id="search-modal" class="search-modal" role="dialog" aria-hidden="true">
+                <div class="search-dialog" role="document">
+                    <div class="search-header">
+                        <input type="text" id="search-input" class="search-input" placeholder="搜索文章标题或内容..."
+                            autocomplete="off" />
+                        <button class="search-close" id="close-search" aria-label="关闭搜索">&times;</button>
+                    </div>
+                    <div id="search-results" class="search-results"></div>
+                </div>
+            </div>
+            
+    <div class="jumbotron jumbotron-fluid" style="background: url('/img/banner.jpg') 80% 100% / contain no-repeat">
+        <div class="container">
+            
+                    <h1 class="mt-4 article-title page-title">hexo博客的搜索功能</h1>
+                    
+                        
+                            <p class="lead text-gray mt-3">By XyGod; Published on 2025-11-04
+                            </p>
+                            
+                                
+                                    <div class="tags">
+                                        <ul class="tag-list">
+                                            
+                                                <li class="tag-list-item">
+                                                    <a class="tag-list-link"
+                                                        href="/tags/hexo/">hexo</a>
+                                                </li>
+                                                
+                                        </ul>
+                                    </div>
+                                    
+        </div>
+    </div>
+                <div class="container">
+                    <!-- <canvas width="1200" height="720" id="pixelCanvas" /> -->
+                    <div class="row">
+                        <div class="col-md-9 pt-2">
+                            <div class="row">
+                                <div class="col-12">
+                                    <main>
+                                        <article class="article-text page-content"><h2 id="准备工作">准备工作</h2>
+<h3 id="安装hexo-generator-searchdb">安装hexo-generator-searchdb</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
+<h3 id="在-config-yml里配置搜索">在_config.yml里配置搜索</h3>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.json</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<p>这一步只是让hexo为我们在public的根目录创建出search.json文件，供我们或者其他搜索插件使用，这里我们不使用其它插件而是自己实现搜索功能</p>
+<h3 id="下载fuse-js">下载fuse.js</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.mjs</span><br></pre></td></tr></table></figure>
+<h2 id="实现代码">实现代码</h2>
+<h3 id="添加搜索按钮">添加搜索按钮</h3>
+<p>html结构：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;search-btn&quot;</span> <span class="attr">id</span>=<span class="string">&quot;open-search&quot;</span> <span class="attr">title</span>=<span class="string">&quot;搜索 (Ctrl+Shift+K)&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &lt;span class=&quot;search-icon&quot;&gt;🔍&lt;/span&gt; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;search-text&quot;</span>&gt;</span>搜索<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;shortcut-key&quot;</span>&gt;</span>Ctrl Shift K<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>样式：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 搜索按钮 */</span></span><br><span class="line"><span class="selector-class">.search-btn</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-flex;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">gap</span>: <span class="number">6px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ddd</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">6px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">6px</span> <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">    <span class="attribute">cursor</span>: pointer;</span><br><span class="line">    <span class="attribute">transition</span>: all <span class="number">0.2s</span> ease;</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">1px</span> <span class="number">3px</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.08</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.search-btn</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">border-color</span>: <span class="number">#007bff</span>;</span><br><span class="line">    <span class="comment">/* color: #007bff; */</span></span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">2px</span> <span class="number">6px</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">123</span>, <span class="number">255</span>, <span class="number">0.15</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.search-icon</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">1rem</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.search-text</span> &#123;</span><br><span class="line">    <span class="attribute">font-weight</span>: <span class="number">500</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.shortcut-key</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">6px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&quot;Consolas&quot;</span>, monospace;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">2px</span> <span class="number">6px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#555</span>;</span><br><span class="line">    <span class="attribute">box-shadow</span>: inset <span class="number">0</span> -<span class="number">1px</span> <span class="number">0</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.1</span>);</span><br><span class="line">    <span class="attribute">user-select</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.search-btn</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.shortcut-key</span> &#123;</span><br><span class="line">    <span class="attribute">border-color</span>: <span class="number">#007bff</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#007bff</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="添加搜索结果模态框">添加搜索结果模态框</h3>
+<p>html结构：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;search-modal&quot;</span> <span class="attr">class</span>=<span class="string">&quot;search-modal&quot;</span> <span class="attr">role</span>=<span class="string">&quot;dialog&quot;</span> <span class="attr">aria-hidden</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;search-dialog&quot;</span> <span class="attr">role</span>=<span class="string">&quot;document&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;search-header&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span></span></span><br><span class="line"><span class="tag">        <span class="attr">type</span>=<span class="string">&quot;text&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">id</span>=<span class="string">&quot;search-input&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">class</span>=<span class="string">&quot;search-input&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">placeholder</span>=<span class="string">&quot;搜索文章标题或内容...&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">autocomplete</span>=<span class="string">&quot;off&quot;</span></span></span><br><span class="line"><span class="tag">      /&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;search-close&quot;</span> <span class="attr">id</span>=<span class="string">&quot;close-search&quot;</span> <span class="attr">aria-label</span>=<span class="string">&quot;关闭搜索&quot;</span>&gt;</span><span class="symbol">&amp;times;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;search-results&quot;</span> <span class="attr">class</span>=<span class="string">&quot;search-results&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>样式:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 模态背景层 */</span></span><br><span class="line"><span class="selector-class">.search-modal</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">    <span class="attribute">position</span>: fixed;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">9999</span>;</span><br><span class="line">    <span class="attribute">inset</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.5</span>);</span><br><span class="line">    <span class="attribute">backdrop-filter</span>: <span class="built_in">blur</span>(<span class="number">4px</span>);</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: flex-start;</span><br><span class="line">    <span class="attribute">overflow-y</span>: auto;</span><br><span class="line">    <span class="attribute">animation</span>: fadeInBg <span class="number">0.3s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.search-modal</span><span class="selector-class">.active</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 搜索对话框主体 */</span></span><br><span class="line"><span class="selector-class">.search-dialog</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">90%</span>;</span><br><span class="line">    <span class="attribute">max-width</span>: <span class="number">680px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">80px</span> auto;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">8px</span> <span class="number">32px</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.25</span>);</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span> <span class="number">24px</span>;</span><br><span class="line">    <span class="attribute">animation</span>: slideDown <span class="number">0.3s</span> ease-out;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">flex-direction</span>: column;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 头部输入与关闭按钮 */</span></span><br><span class="line"><span class="selector-class">.search-header</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">margin-bottom</span>: <span class="number">12px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.search-input</span> &#123;</span><br><span class="line">    <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ddd</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">6px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">outline</span>: none;</span><br><span class="line">    <span class="attribute">transition</span>: <span class="number">0.2s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.search-input</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">border-color</span>: <span class="built_in">var</span>(--accent-color, <span class="number">#007bff</span>);</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">2px</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">123</span>, <span class="number">255</span>, <span class="number">0.1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.search-close</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">8px</span>;</span><br><span class="line">    <span class="attribute">background</span>: none;</span><br><span class="line">    <span class="attribute">border</span>: none;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">1.8rem</span>;</span><br><span class="line">    <span class="attribute">cursor</span>: pointer;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#aaa</span>;</span><br><span class="line">    <span class="attribute">transition</span>: <span class="number">0.2s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.search-close</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#555</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 搜索结果容器 */</span></span><br><span class="line"><span class="selector-class">.search-results</span> &#123;</span><br><span class="line">    <span class="attribute">max-height</span>: <span class="number">65vh</span>;</span><br><span class="line">    <span class="attribute">overflow-y</span>: auto;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">6px</span>;</span><br><span class="line">    <span class="attribute">padding-right</span>: <span class="number">6px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.search-results</span>::-webkit-scrollbar &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">6px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.search-results</span>::-webkit-scrollbar-thumb &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#ccc</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 单项结果 */</span></span><br><span class="line"><span class="selector-class">.search-result-item</span> &#123;</span><br><span class="line">    <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#eee</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">12px</span> <span class="number">4px</span>;</span><br><span class="line">    <span class="attribute">transition</span>: <span class="number">0.2s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.search-result-item</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f9f9f9</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.search-result-item</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">font-weight</span>: <span class="number">600</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="built_in">var</span>(--accent-color, <span class="number">#007bff</span>);</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.search-result-item</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">text-decoration</span>: underline;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.search-result-snippet</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">13px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#666</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">4px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 动画 */</span></span><br><span class="line"><span class="keyword">@keyframes</span> fadeInBg &#123;</span><br><span class="line">    <span class="selector-tag">from</span> &#123;</span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">to</span> &#123;</span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> slideDown &#123;</span><br><span class="line">    <span class="selector-tag">from</span> &#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-<span class="number">20px</span>);</span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">to</span> &#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">translateY</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 禁止背景滚动 */</span></span><br><span class="line"><span class="selector-tag">body</span><span class="selector-class">.modal-open</span> &#123;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="实现搜索逻辑">实现搜索逻辑</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Fuse</span> <span class="keyword">from</span> <span class="string">&#x27;./fuse.js&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">initSearch</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">&#x27;/search.json&#x27;</span>)</span><br><span class="line">  <span class="keyword">const</span> data = <span class="keyword">await</span> res.<span class="title function_">json</span>()</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> openBtn = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;open-search&#x27;</span>)</span><br><span class="line">  <span class="keyword">const</span> closeBtn = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;close-search&#x27;</span>)</span><br><span class="line">  <span class="keyword">const</span> modal = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;search-modal&#x27;</span>)</span><br><span class="line">  <span class="keyword">const</span> input = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;search-input&#x27;</span>)</span><br><span class="line">  <span class="keyword">const</span> resultsBox = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(</span><br><span class="line">    <span class="string">&#x27;search-results&#x27;</span></span><br><span class="line">  )</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> lastFocusedElement = <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 初始化 Fuse.js</span></span><br><span class="line">  <span class="keyword">const</span> fuse = <span class="keyword">new</span> <span class="title class_">Fuse</span>(data, &#123;</span><br><span class="line">    <span class="attr">keys</span>: [<span class="string">&#x27;title&#x27;</span>, <span class="string">&#x27;content&#x27;</span>],</span><br><span class="line">    <span class="attr">includeScore</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">threshold</span>: <span class="number">0.8</span>, <span class="comment">// 模糊程度（越低越严格）</span></span><br><span class="line">    <span class="attr">useExtendedSearch</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">minMatchCharLength</span>: <span class="number">0</span>,</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="title function_">readerResult</span>(data)</span><br><span class="line"></span><br><span class="line">  openBtn.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    lastFocusedElement = <span class="variable language_">document</span>.<span class="property">activeElement</span></span><br><span class="line">    <span class="title function_">openModal</span>()</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  closeBtn.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, closeModal)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">openModal</span>(<span class="params"></span>) &#123;</span><br><span class="line">    modal.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line">    <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;modal-open&#x27;</span>)</span><br><span class="line">    input.<span class="title function_">focus</span>()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">closeModal</span>(<span class="params"></span>) &#123;</span><br><span class="line">    modal.<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;active&#x27;</span>)</span><br><span class="line">    <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;modal-open&#x27;</span>)</span><br><span class="line">    lastFocusedElement?.<span class="title function_">focus</span>()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  modal.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (e.<span class="property">target</span> === modal) <span class="title function_">closeModal</span>()</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keydown&#x27;</span>, <span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (e.<span class="property">ctrlKey</span> &amp;&amp; e.<span class="property">shiftKey</span> &amp;&amp; e.<span class="property">key</span> === <span class="string">&#x27;K&#x27;</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!modal.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;active&#x27;</span>)) &#123;</span><br><span class="line">        <span class="title function_">openModal</span>()</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        input.<span class="title function_">focus</span>()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!modal.<span class="property">classList</span>.<span class="title function_">contains</span>(<span class="string">&#x27;active&#x27;</span>)) <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> (e.<span class="property">key</span> === <span class="string">&#x27;Escape&#x27;</span>) <span class="title function_">closeModal</span>()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> focusable = modal.<span class="title function_">querySelectorAll</span>(</span><br><span class="line">      <span class="string">&#x27;input, button, a&#x27;</span></span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">const</span> first = focusable[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">const</span> last = focusable[focusable.<span class="property">length</span> - <span class="number">1</span>]</span><br><span class="line">    <span class="keyword">if</span> (e.<span class="property">key</span> === <span class="string">&#x27;Tab&#x27;</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (e.<span class="property">shiftKey</span> &amp;&amp; <span class="variable language_">document</span>.<span class="property">activeElement</span> === first) &#123;</span><br><span class="line">        e.<span class="title function_">preventDefault</span>()</span><br><span class="line">        last.<span class="title function_">focus</span>()</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (</span><br><span class="line">        !e.<span class="property">shiftKey</span> &amp;&amp;</span><br><span class="line">        <span class="variable language_">document</span>.<span class="property">activeElement</span> === last</span><br><span class="line">      ) &#123;</span><br><span class="line">        e.<span class="title function_">preventDefault</span>()</span><br><span class="line">        first.<span class="title function_">focus</span>()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">readerResult</span>(<span class="params">results</span>) &#123;</span><br><span class="line">    resultsBox.<span class="property">innerHTML</span> = results</span><br><span class="line">      .<span class="title function_">map</span>(<span class="function"><span class="params">post</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> content = (post.<span class="property">content</span> || <span class="string">&#x27;&#x27;</span>).<span class="title function_">slice</span>(</span><br><span class="line">          <span class="number">0</span>,</span><br><span class="line">          <span class="title class_">Math</span>.<span class="title function_">max</span>(</span><br><span class="line">            <span class="number">120</span>,</span><br><span class="line">            <span class="built_in">parseInt</span>(</span><br><span class="line">              post.<span class="property">content</span>.<span class="property">length</span> *</span><br><span class="line">                (<span class="number">1</span> - (results.<span class="property">length</span> - <span class="number">1</span>) / data.<span class="property">length</span>)</span><br><span class="line">            )</span><br><span class="line">          )</span><br><span class="line">        )</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`</span></span><br><span class="line"><span class="string">          &lt;div class=&quot;search-item&quot;&gt;</span></span><br><span class="line"><span class="string">            &lt;a href=&quot;<span class="subst">$&#123;</span></span></span><br><span class="line"><span class="subst"><span class="string">              post.url[<span class="number">1</span>] === <span class="string">&#x27;\/&#x27;</span></span></span></span><br><span class="line"><span class="subst"><span class="string">                ? post.url.slice(<span class="number">1</span>)</span></span></span><br><span class="line"><span class="subst"><span class="string">                : post.url</span></span></span><br><span class="line"><span class="subst"><span class="string">            &#125;</span>&quot;&gt;<span class="subst">$&#123;post.title&#125;</span>&lt;/a&gt;</span></span><br><span class="line"><span class="string">            &lt;p&gt;<span class="subst">$&#123;content&#125;</span><span class="subst">$&#123;</span></span></span><br><span class="line"><span class="subst"><span class="string">          post.content.length === content.length</span></span></span><br><span class="line"><span class="subst"><span class="string">            ? <span class="string">&#x27;&#x27;</span></span></span></span><br><span class="line"><span class="subst"><span class="string">            : <span class="string">&#x27;...&#x27;</span></span></span></span><br><span class="line"><span class="subst"><span class="string">        &#125;</span></span></span><br><span class="line"><span class="string">            &lt;/p&gt;</span></span><br><span class="line"><span class="string">          &lt;/div&gt;</span></span><br><span class="line"><span class="string">        `</span></span><br><span class="line">      &#125;)</span><br><span class="line">      .<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 高亮函数（支持多个关键词）</span></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">highlightKeyword</span>(<span class="params">keywords</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!(<span class="string">&#x27;CSS&#x27;</span> <span class="keyword">in</span> <span class="variable language_">window</span>) || !<span class="variable constant_">CSS</span>.<span class="property">highlights</span>) <span class="keyword">return</span></span><br><span class="line">    <span class="variable constant_">CSS</span>.<span class="property">highlights</span>.<span class="title function_">clear</span>()</span><br><span class="line">    <span class="keyword">if</span> (!keywords.<span class="property">length</span>) <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> ranges = []</span><br><span class="line">    resultsBox</span><br><span class="line">      .<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;.search-item&#x27;</span>)</span><br><span class="line">      .<span class="title function_">forEach</span>(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> walker = <span class="variable language_">document</span>.<span class="title function_">createTreeWalker</span>(</span><br><span class="line">          item,</span><br><span class="line">          <span class="title class_">NodeFilter</span>.<span class="property">SHOW_TEXT</span></span><br><span class="line">        )</span><br><span class="line">        <span class="keyword">let</span> node</span><br><span class="line">        <span class="keyword">while</span> ((node = walker.<span class="title function_">nextNode</span>())) &#123;</span><br><span class="line">          <span class="keyword">const</span> text = node.<span class="property">textContent</span></span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">const</span> word <span class="keyword">of</span> keywords) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!word) <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">const</span> regex = <span class="keyword">new</span> <span class="title class_">RegExp</span>(</span><br><span class="line">              word.<span class="title function_">replace</span>(<span class="regexp">/[.*+?^$&#123;&#125;()|[\]\\]/g</span>, <span class="string">&#x27;\\$&amp;&#x27;</span>),</span><br><span class="line">              <span class="string">&#x27;gi&#x27;</span></span><br><span class="line">            )</span><br><span class="line">            <span class="keyword">let</span> match</span><br><span class="line">            <span class="keyword">while</span> ((match = regex.<span class="title function_">exec</span>(text))) &#123;</span><br><span class="line">              <span class="keyword">const</span> range = <span class="keyword">new</span> <span class="title class_">Range</span>()</span><br><span class="line">              range.<span class="title function_">setStart</span>(node, match.<span class="property">index</span>)</span><br><span class="line">              range.<span class="title function_">setEnd</span>(</span><br><span class="line">                node,</span><br><span class="line">                match.<span class="property">index</span> + match[<span class="number">0</span>].<span class="property">length</span></span><br><span class="line">              )</span><br><span class="line">              ranges.<span class="title function_">push</span>(range)</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (ranges.<span class="property">length</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> highlight = <span class="keyword">new</span> <span class="title class_">Highlight</span>(...ranges)</span><br><span class="line">      <span class="variable constant_">CSS</span>.<span class="property">highlights</span>.<span class="title function_">set</span>(<span class="string">&#x27;search-highlight&#x27;</span>, highlight)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 搜索逻辑 + 模糊匹配 + 多关键词高亮</span></span><br><span class="line">  input.<span class="title function_">addEventListener</span>(<span class="string">&#x27;input&#x27;</span>, <span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> keyword = e.<span class="property">target</span>.<span class="property">value</span>.<span class="title function_">trim</span>().<span class="title function_">toLowerCase</span>()</span><br><span class="line">    resultsBox.<span class="property">innerHTML</span> = <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!keyword) &#123;</span><br><span class="line">      <span class="title function_">readerResult</span>(data)</span><br><span class="line">      <span class="title function_">highlightKeyword</span>([])</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> keywords = keyword.<span class="title function_">split</span>(<span class="regexp">/\s+/</span>).<span class="title function_">filter</span>(<span class="title class_">Boolean</span>)</span><br><span class="line">    <span class="keyword">const</span> results = fuse.<span class="title function_">search</span>(keyword)</span><br><span class="line">    <span class="keyword">const</span> final = results.<span class="title function_">map</span>(<span class="function"><span class="params">r</span> =&gt;</span> r.<span class="property">item</span>)</span><br><span class="line">    <span class="keyword">if</span> (final.<span class="property">length</span> === <span class="number">0</span>) &#123;</span><br><span class="line">      resultsBox.<span class="property">innerHTML</span> = <span class="string">&#x27;&lt;p&gt;未找到相关文章&lt;/p&gt;&#x27;</span></span><br><span class="line">      <span class="title function_">highlightKeyword</span>([])</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">readerResult</span>(final)</span><br><span class="line">    <span class="title function_">highlightKeyword</span>(keywords)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">initSearch</span>()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</article>
+                                    </main>
+                                    
+                                        
+                                                
+                                </div>
+                            </div>
+                            <div class="row mt-5 mb-5">
+                                <div class="col-12">
+                                    <div class="row">
+    <div class="col">
+        <nav aria-label="paginator" class="paginator">
+            <ul class="pagination d-none d-md-flex pagination-lg justify-content-center">
+                <li class="page-item ">
+                    <a class="page-link"
+                        href="/tec/hexo%E5%8D%A1%E7%89%87%E5%8A%9F%E8%83%BD/"
+                        aria-label="Previous">
+                        <span aria-hidden="true">&laquo;
+                            hexo卡片功能</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item ">
+                    <a class="page-link"
+                        href="/tec/%E5%9C%A8ubuntu%E4%B8%8A%E9%83%A8%E7%BD%B2nginx/"
+                        aria-label="Next">
+                        <span
+                            aria-hidden="true">在ubuntu上部署nginx
+                            &raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="pagination d-md-none justify-content-center">
+                <li class="page-item ">
+                    <a class="page-link"
+                        href="/tec/hexo%E5%8D%A1%E7%89%87%E5%8A%9F%E8%83%BD/"
+                        aria-label="Previous">
+                        <span aria-hidden="true">&laquo;
+                            hexo卡片功能</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item ">
+                    <a class="page-link"
+                        href="/tec/%E5%9C%A8ubuntu%E4%B8%8A%E9%83%A8%E7%BD%B2nginx/"
+                        aria-label="Next">
+                        <span
+                            aria-hidden="true">在ubuntu上部署nginx
+                            &raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div id="vcomment"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="container pt-4 page-sidebar">
+                                
+                                    <div class="row">
+    <div class="col">
+        <h6>APPLAUSE FOR ME</h6>
+        <div id="applause-easy"></div>
+    </div>
+</div>
+                                        
+                                            <hr class="row">
+                                            <div class="row toc-container">
+                                                <div class="col-12">
+                                                    <h6>NAVIGATION</h6>
+                                                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">准备工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85hexo-generator-searchdb"><span class="toc-text">安装hexo-generator-searchdb</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8-config-yml%E9%87%8C%E9%85%8D%E7%BD%AE%E6%90%9C%E7%B4%A2"><span class="toc-text">在_config.yml里配置搜索</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDfuse-js"><span class="toc-text">下载fuse.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81"><span class="toc-text">实现代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E6%8C%89%E9%92%AE"><span class="toc-text">添加搜索按钮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C%E6%A8%A1%E6%80%81%E6%A1%86"><span class="toc-text">添加搜索结果模态框</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%90%9C%E7%B4%A2%E9%80%BB%E8%BE%91"><span class="toc-text">实现搜索逻辑</span></a></li></ol></li></ol>
+                                                </div>
+                                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer>
+    <div class="jumbotron jumbotron-fluid mb-0">
+        <div class="container-fluid">
+            <div class="col text-center">
+                <div class="bottom-social">
+                    <div class="row">
+    <div class="col text-center">
+        <ul class="list-inline">
+            
+            <li class="list-inline-item">
+                
+                <a target="_blank" rel="noopener" href="https://github.com/xygodcyx">
+                    <span class="fa-stack fa-2x icon-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+                
+            </li>
+            
+            <li class="list-inline-item">
+                
+                <a target="_blank" rel="noopener" href="https://space.bilibili.com/1308065752">
+                    <span class="fa-stack fa-2x icon-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-bilibili-p fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+                
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+                </div>
+                <p class="copyright text-muted">
+                    Copyright &copy; 
+                    <br>
+                    Theme: <a target="_blank" rel="noopener" href="https://github.com/Hanlin-Dong/hexo-theme-adagio">Adagio</a> - A <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> theme made with love by <a target="_blank" rel="noopener" href="http://www.hanlindong.com">Hanlin Dong</a>.
+                    <br>
+                    Thanks for coming!
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+                    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.min.js"></script>
+    
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+
+
+<script src="/js/av.min.js"></script>
+
+
+<script src="/js/valine.min.js"></script>
+
+<!-- 
+<script src="/js/valine.min2.js"></script>
+ -->
+<!-- <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script> -->
+
+<script src="/js/applause-easy.js"></script>
+
+
+<script src="/js/highlight.min.js"></script>
+
+<script src="/js/gdscript.min.js"></script>
+
+<script type="module" src="/js/search.js"></script>
+
+<script>hljs.highlightAll();</script>
+
+<!-- and it's easy to individually load additional languages -->
+    
+<script>
+$(document).ready(function() {
+    new ApplauseEasy({
+        id: 'applause-easy',
+        appId: "Rut3rqcEtcoHzeZmzHIHmEaw-gzGzoHsz",
+        appKey: "Goyr6nvk7Uw6y9hQNrrhvzim",
+        img_src: "/img/clap.png",
+        img_width: "50px",
+        img_height: "50px",
+        trigger_every: 20,
+        trigger_fun: () => {console.log("Thanks!");}
+    })
+})
+</script>
+
+<script src="/js/adagio.js"></script>
+
+
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?123456789";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-11111111-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-11111111-1');
+</script>
+
+
+                        
+                            <script>
+    new Valine({
+        el: "#vcomment",
+        appId: "Rut3rqcEtcoHzeZmzHIHmEaw-gzGzoHsz",
+        appKey: "Goyr6nvk7Uw6y9hQNrrhvzim",
+        avatar: "monsterid",
+        serverURLs: "https://rut3rqce.lc-cn-n1-shared.com",
+        like: true, // 启用点赞功能
+        likeType: 1, // 0: 点赞样式，1: 心形样式
+        visitor: true,
+        enableQQ: true,
+        recordIP: true,
+        emojiCDN: 'https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/',
+        emojiMaps: [
+            "bilibilitv/[tv_doge].png","bilibilitv/[tv_亲亲].png","bilibilitv/[tv_偷笑].png","bilibilitv/[tv_再见].png","bilibilitv/[tv_冷漠].png","bilibilitv/[tv_发怒].png","bilibilitv/[tv_发财].png","bilibilitv/[tv_可爱].png","bilibilitv/[tv_吐血].png","bilibilitv/[tv_呆].png","bilibilitv/[tv_呕吐].png","bilibilitv/[tv_困].png","bilibilitv/[tv_坏笑].png","bilibilitv/[tv_大佬].png","bilibilitv/[tv_大哭].png","bilibilitv/[tv_委屈].png","bilibilitv/[tv_害羞].png","bilibilitv/[tv_尴尬].png","bilibilitv/[tv_微笑].png","bilibilitv/[tv_思考].png","bilibilitv/[tv_惊吓].png","bilibilitv/[tv_打脸].png","bilibilitv/[tv_抓狂].png","bilibilitv/[tv_抠鼻].png","bilibilitv/[tv_斜眼笑].png","bilibilitv/[tv_无奈].png","bilibilitv/[tv_晕].png","bilibilitv/[tv_流汗].png","bilibilitv/[tv_流泪].png","bilibilitv/[tv_流鼻血].png","bilibilitv/[tv_点赞].png","bilibilitv/[tv_生气].png","bilibilitv/[tv_生病].png","bilibilitv/[tv_疑问].png","bilibilitv/[tv_白眼].png","bilibilitv/[tv_皱眉].png","bilibilitv/[tv_目瞪口呆].png","bilibilitv/[tv_睡着].png","bilibilitv/[tv_笑哭].png","bilibilitv/[tv_腼腆].png","bilibilitv/[tv_色].png","bilibilitv/[tv_调侃].png","bilibilitv/[tv_调皮].png","bilibilitv/[tv_鄙视].png","bilibilitv/[tv_闭嘴].png","bilibilitv/[tv_难过].png","bilibilitv/[tv_馋].png","bilibilitv/[tv_鬼脸].png","bilibilitv/[tv_黑人问号].png","bilibilitv/[tv_鼓掌].png",
+            "hr",
+            "bilibiliHotKey/1.jpg", "bilibiliHotKey/10.jpg", "bilibiliHotKey/11.jpg", "bilibiliHotKey/12.jpg", "bilibiliHotKey/13.jpg", "bilibiliHotKey/14.jpg", "bilibiliHotKey/15.jpg", "bilibiliHotKey/16.jpg", "bilibiliHotKey/17.jpg", "bilibiliHotKey/18.jpg", "bilibiliHotKey/19.jpg", "bilibiliHotKey/2.jpg", "bilibiliHotKey/20.jpg", "bilibiliHotKey/21.jpg", "bilibiliHotKey/22.jpg", "bilibiliHotKey/23.jpg", "bilibiliHotKey/24.jpg", "bilibiliHotKey/25.jpg", "bilibiliHotKey/26.jpg", "bilibiliHotKey/27.jpg", "bilibiliHotKey/28.jpg", "bilibiliHotKey/29.jpg", "bilibiliHotKey/3.jpg", "bilibiliHotKey/30.jpg", "bilibiliHotKey/31.jpg", "bilibiliHotKey/32.jpg", "bilibiliHotKey/4.jpg", "bilibiliHotKey/5.jpg", "bilibiliHotKey/6.jpg", "bilibiliHotKey/7.jpg", "bilibiliHotKey/8.jpg", "bilibiliHotKey/9.jpg",
+            "hr",
+            "Heybox/expression_cube.png", "Heybox/expression_cube_bingbujiandan.png", "Heybox/expression_cube_bizui.png", "Heybox/expression_cube_cangsang.png", "Heybox/expression_cube_dalian.png", "Heybox/expression_cube_doge.png", "Heybox/expression_cube_gandong.png", "Heybox/expression_cube_guai.png", "Heybox/expression_cube_gugu.png", "Heybox/expression_cube_han.png", "Heybox/expression_cube_hbi.png", "Heybox/expression_cube_heirenwenhao.png", "Heybox/expression_cube_huaji.png", "Heybox/expression_cube_jiayou.png", "Heybox/expression_cube_jingya.png", "Heybox/expression_cube_kaixin.png", "Heybox/expression_cube_ku.png", "Heybox/expression_cube_kun.png", "Heybox/expression_cube_kuqi.png", "Heybox/expression_cube_nu.png", "Heybox/expression_cube_penshui.png", "Heybox/expression_cube_qiliang.png", "Heybox/expression_cube_shengqi.png", "Heybox/expression_cube_shuijiao.png", "Heybox/expression_cube_tanqi.png", "Heybox/expression_cube_tanshou.png", "Heybox/expression_cube_tu.png", "Heybox/expression_cube_wa.png", "Heybox/expression_cube_weiqu.png", "Heybox/expression_cube_weixiao.png", "Heybox/expression_cube_wulianku.png", "Heybox/expression_cube_xia.png", "Heybox/expression_cube_xiaocry.png", "Heybox/expression_cube_xihuan.png", "Heybox/expression_cube_xuexi.png", "Heybox/expression_cube_yun.png", "Heybox/expression_cube_zan.png", "Heybox/expression_heyboxgirl.png", "Heybox/expression_heyboxgirl_v2.png", "Heybox/expression_heygirl.png", "Heybox/expression_heygirl_aidao.png", "Heybox/expression_heygirl_baipiaoguai.png", "Heybox/expression_heygirl_chi.png", "Heybox/expression_heygirl_chigua.png", "Heybox/expression_heygirl_eihei.png", "Heybox/expression_heygirl_haha.png", "Heybox/expression_heygirl_haixiu.png", "Heybox/expression_heygirl_henaicha.png", "Heybox/expression_heygirl_huaji.png", "Heybox/expression_heygirl_jing.png", "Heybox/expression_heygirl_jixialai.png", "Heybox/expression_heygirl_kaikele.png", "Heybox/expression_heygirl_ku.png", "Heybox/expression_heygirl_kujiuruhou.png", "Heybox/expression_heygirl_nielian.png", "Heybox/expression_heygirl_qiaokaixin.png", "Heybox/expression_heygirl_qiehua.png", "Heybox/expression_heygirl_rua.png", "Heybox/expression_heygirl_toukan.png", "Heybox/expression_heygirl_tu.png", "Heybox/expression_heygirl_wuyu.png", "Heybox/expression_heygirl_xihuan.png", "Heybox/expression_heygirl_yiwen.png", "Heybox/expression_heygirl_zhe.png", "Heybox/expression_heziji_1.png", "Heybox/expression_heziji_10.png", "Heybox/expression_heziji_11.png", "Heybox/expression_heziji_12.png", "Heybox/expression_heziji_13.png", "Heybox/expression_heziji_14.png", "Heybox/expression_heziji_15.png", "Heybox/expression_heziji_16.png", "Heybox/expression_heziji_17.png", "Heybox/expression_heziji_18.png", "Heybox/expression_heziji_19.png", "Heybox/expression_heziji_2.png", "Heybox/expression_heziji_20.png", "Heybox/expression_heziji_21.png", "Heybox/expression_heziji_22.png", "Heybox/expression_heziji_23.png", "Heybox/expression_heziji_24.png", "Heybox/expression_heziji_25.png", "Heybox/expression_heziji_26.png", "Heybox/expression_heziji_27.png", "Heybox/expression_heziji_28.png", "Heybox/expression_heziji_29.png", "Heybox/expression_heziji_3.png", "Heybox/expression_heziji_30.png", "Heybox/expression_heziji_31.png", "Heybox/expression_heziji_32.png", "Heybox/expression_heziji_4.png", "Heybox/expression_heziji_5.png", "Heybox/expression_heziji_6.png", "Heybox/expression_heziji_7.png", "Heybox/expression_heziji_8.png", "Heybox/expression_heziji_9.png",
+            "hr",
+            "HONKAI3-Daily/1.gif", "HONKAI3-Daily/10.gif", "HONKAI3-Daily/11.gif", "HONKAI3-Daily/12.gif", "HONKAI3-Daily/13.gif", "HONKAI3-Daily/14.gif", "HONKAI3-Daily/15.gif", "HONKAI3-Daily/16.gif", "HONKAI3-Daily/2.gif", "HONKAI3-Daily/3.gif", "HONKAI3-Daily/4.gif", "HONKAI3-Daily/5.gif", "HONKAI3-Daily/6.gif", "HONKAI3-Daily/7.gif", "HONKAI3-Daily/8.gif", "HONKAI3-Daily/9.gif",
+            "hr",
+            "Yurui-Neko/001.png", "Yurui-Neko/002.png", "Yurui-Neko/003.png", "Yurui-Neko/004.png", "Yurui-Neko/005.png", "Yurui-Neko/006.png", "Yurui-Neko/007.png", "Yurui-Neko/008.png", "Yurui-Neko/009.png", "Yurui-Neko/010.png", "Yurui-Neko/011.png", "Yurui-Neko/012.png", "Yurui-Neko/013.png", "Yurui-Neko/014.png", "Yurui-Neko/015.png", "Yurui-Neko/016.png", "Yurui-Neko/017.png", "Yurui-Neko/018.png", "Yurui-Neko/019.png", "Yurui-Neko/020.png", "Yurui-Neko/021.png", "Yurui-Neko/022.png", "Yurui-Neko/023.png", "Yurui-Neko/024.png", "Yurui-Neko/025.png", "Yurui-Neko/026.png", "Yurui-Neko/027.png", "Yurui-Neko/028.png", "Yurui-Neko/029.png", "Yurui-Neko/030.png", "Yurui-Neko/031.png", "Yurui-Neko/032.png", "Yurui-Neko/033.png", "Yurui-Neko/034.png", "Yurui-Neko/035.png", "Yurui-Neko/036.png", "Yurui-Neko/037.png", "Yurui-Neko/038.png", "Yurui-Neko/039.png", "Yurui-Neko/040.png",
+        ],
+        // 设置Bilibili表情包地址
+        // emojiCDN: '//i0.hdslb.com/bfs/emote/',
+        // // 表情title和图片映射
+        // emojiMaps: {
+        //     "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+        //     "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+        //     "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+        //     "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+        //     "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+        //     "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+        //     "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+        //     "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+        //     "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+        //     "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+        //     "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+        //     "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+        //     "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+        //     "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+        //     "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+        //     "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+        //     "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+        //     "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+        //     "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+        //     "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+        //     "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+        //     // ... 更多表情
+        // }
+
+
+
+    })
+</script>
+                                
+    </body>
+
+</html>

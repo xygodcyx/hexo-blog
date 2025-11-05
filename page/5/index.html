@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="/img/face.jpg">
+    <title>XyGod</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" >
+    
+
+    
+<link rel="stylesheet" href="/css/adagio.css">
+
+    
+<link rel="stylesheet" href="/css/search.css">
+
+    
+<link rel="stylesheet" href="/css/tip.css">
+
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="XyGod" type="application/atom+xml">
+</head>
+
+    <body>
+        
+            <div class="container-fluid">
+    <nav class="nav">
+        <div class="collapse navbar-collapse" id="navbar-sm">
+            
+                
+                    <div class="navbar-nav">
+                        <a href="/" class="nav-item nav-link">文章</a>
+                    </div>
+                    
+                    <div class="navbar-nav">
+                        <a href="/contact" class="nav-item nav-link">联系</a>
+                    </div>
+                    
+                    <div class="navbar-nav">
+                        <a href="/about" class="nav-item nav-link">关于</a>
+                    </div>
+                    
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link open-search" title="搜索 (Ctrl+Shift+K)">
+                            <!-- <span class="search-icon">🔍</span> -->
+                            搜索
+                        </a>
+                    </div>
+        </div>
+    </nav>
+</div>
+
+    <div class="my-navbar d-md-none">
+        
+            <div class="nav pt-2 pl-1">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-sm"
+                    aria-expanded="false" aria-label="Toggle Navigation">
+                    <i class="fas fa-bars fa-lg"></i>
+                </button>
+            </div>
+            
+    </div>
+    
+
+            <div class="container d-none d-md-block my-navbar">
+                <nav class="navbar navbar-expand-sm navbar-light bg-transparent">
+                    <a class="navbar-brand d-none" href="/">
+                        
+                                XG
+                                    
+                    </a>
+                    
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                
+                                    
+                                        <li
+                                            class="nav-item pl-2 pr-2 ">
+                                            <!-- <span>page5/</span> -->
+                                            <a class="nav-link" href="/">文章</a>
+                                        </li>
+                                        
+                                    
+                                        <li
+                                            class="nav-item pl-2 pr-2 ">
+                                            <!-- <span>page5/</span> -->
+                                            <a class="nav-link" href="/contact">联系</a>
+                                        </li>
+                                        
+                                    
+                                        <li
+                                            class="nav-item pl-2 pr-2 ">
+                                            <!-- <span>page5/</span> -->
+                                            <a class="nav-link" href="/about">关于</a>
+                                        </li>
+                                        
+                                            <li class="nav-item pl-2 pr-2">
+                                                <button class="search-btn open-search" id="open-search"
+                                                    title="搜索 (Ctrl+Shift+K)">
+                                                    <!-- <span class="search-icon">🔍</span> -->
+                                                    <span class="search-text">搜索</span>
+                                                    <span class="shortcut-key">Ctrl Shift K</span>
+                                                </button>
+                                            </li>
+                            </ul>
+                        </div>
+                        
+                </nav>
+            </div>
+
+            <div id="search-modal" class="search-modal" role="dialog" aria-hidden="true">
+                <div class="search-dialog" role="document">
+                    <div class="search-header">
+                        <input type="text" id="search-input" class="search-input" placeholder="搜索文章标题或内容..."
+                            autocomplete="off" />
+                        <button class="search-close" id="close-search" aria-label="关闭搜索">&times;</button>
+                    </div>
+                    <div id="search-results" class="search-results"></div>
+                </div>
+            </div>
+                
+                    
+<img class="d-none d-sm-block" src="/img/banner.jpg" style="width: 80%;margin: 0 auto;max-height: 760px;object-fit:scale-down;">
+<img class="d-sm-none" src="/img/banner.jpg" style="width: 100%;">
+
+                        <div class="container">
+                            <div class="row pt-3">
+                                <div class="col-md-9">
+                                    <div class="row">
+                                        <div class="col">
+                                            
+                                                <div class="row">
+    <div class="col">
+        <a href="/tec/this%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98/" class="index-card-link">
+            <div class="card-body index-card-box">
+                <h4 class="card-title text-dark article-title">this指向问题</h4>
+                <h6 class="card-subtitle mt-2 text-muted">
+                    By QuHou; 
+                    Published on 2025-03-26</h6>
+                <p class="card-text text-dark mt-2 article-text">
+                    123456789101112131415&lt;script&gt;  class C1 &#123;    constructor() &#123;      window.setTimeout(function () &#123;        // 普通函数的this执行遵循谁调用指向谁的原则        console.log(this)      &#125;)      wi...
+                </p>
+            </div>
+        </a>
+    </div>
+</div>
+                                                    <hr class="row">
+                                                    
+                                                <div class="row">
+    <div class="col">
+        <a href="/tec/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" class="index-card-link">
+            <div class="card-body index-card-box">
+                <h4 class="card-title text-dark article-title">事件循环</h4>
+                <h6 class="card-subtitle mt-2 text-muted">
+                    By QuHou; 
+                    Published on 2025-03-26</h6>
+                <p class="card-text text-dark mt-2 article-text">
+                    宏任务：
+定时器，ajax，读取文件
+微任务：
+promise.then
+(只有 then 是异步的，放在 new Promise()里的代码是同步的)
+async 是 new promise 的简写
+1234567891011//以下两个函数式一样的async function fn() &#123;  return 1&#125;function fn() &#123;  return ...
+                </p>
+            </div>
+        </a>
+    </div>
+</div>
+                                                    <hr class="row">
+                                                    
+                                                <div class="row">
+    <div class="col">
+        <a href="/tec/GitBash%E5%88%AB%E5%90%8D%E9%85%8D%E7%BD%AE/" class="index-card-link">
+            <div class="card-body index-card-box">
+                <h4 class="card-title text-dark article-title">GitBash别名配置</h4>
+                <h6 class="card-subtitle mt-2 text-muted">
+                    By QuHou; 
+                    Published on 2025-03-25</h6>
+                <p class="card-text text-dark mt-2 article-text">
+                    1.打开Git Bash，查看本机根目录下是否存在.bash_profile文件，若不存在，则创建该文件：
+2.编辑.bash_profile文件，在文件末尾添加以下内容：
+123456789101112131415161718alias cls=&#x27;clear&#x27;alias rl=&#x27;source ~/.bash_profile&#x27;alias bc=&#x2...
+                </p>
+            </div>
+        </a>
+    </div>
+</div>
+                                                    <hr class="row">
+                                                    
+                                                <div class="row">
+    <div class="col">
+        <a href="/lit/%E6%8A%89%E6%8B%A9/" class="index-card-link">
+            <div class="card-body index-card-box">
+                <h4 class="card-title text-dark article-title">抉择</h4>
+                <h6 class="card-subtitle mt-2 text-muted">
+                    By QuHou; 
+                    Published on 2025-03-05</h6>
+                <p class="card-text text-dark mt-2 article-text">
+                    我此前是不愿相信宿命这一说法的，直到回想起近些年来的经历，我不得不相信在某种程度上人的行为是很难受自己控制的，比如三年前刚步入大学时，我听了太多太多的建议，但我不以为然，只想做自己想做的，但三年后的今天，我又成了三年前想给刚步入大学的新手们建议的那些人，真是一个好轮回哇。很多时候只有自己真正经历过、淌过这趟浑水才会真正明白前人给的建议是多么的真诚，但往往意识到这一点的时候已经为时过晚了，因为...
+                </p>
+            </div>
+        </a>
+    </div>
+</div>
+                                                    <hr class="row">
+                                                    
+                                                <div class="row">
+    <div class="col">
+        <a href="/tec/%E5%9B%BD%E7%8E%8B%E5%92%8C%E7%8C%AA%E7%9A%84%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97(%E7%AC%AC3%E5%A4%A9)/" class="index-card-link">
+            <div class="card-body index-card-box">
+                <h4 class="card-title text-dark article-title">国王和猪的游戏开发日志(第3天)</h4>
+                <h6 class="card-subtitle mt-2 text-muted">
+                    By QuHou; 
+                    Published on 2024-12-20</h6>
+                <p class="card-text text-dark mt-2 article-text">
+                    开发总结：
+
+
+实现了国王的移动，跳跃和攻击
+
+
+实现了猪的移动，跳跃和攻击和基本的AI功能（自动移动，追击，自动跳过障碍物）
+
+
+实现了简要的门与门之间的传送
+
+
+TODO:
+
+
+使用状态机重构国王和猪的逻辑
+
+
+完善猪的AI逻辑，使用状态机重构
+
+
+完善门与门之间的识别逻辑，实现在任意地方，任意数量的门于门之间可以随意传送
+
+
+
+                </p>
+            </div>
+        </a>
+    </div>
+</div>
+                                                    <hr class="row">
+                                                    
+                                                <div class="row">
+    <div class="col">
+        <a href="/lit/%E9%81%97%E6%86%BE%E4%B9%8B%E4%BA%8E%E7%94%9F%E5%91%BD/" class="index-card-link">
+            <div class="card-body index-card-box">
+                <h4 class="card-title text-dark article-title">遗憾之于生命</h4>
+                <h6 class="card-subtitle mt-2 text-muted">
+                    By QuHou; 
+                    Published on 2023-12-02</h6>
+                <p class="card-text text-dark mt-2 article-text">
+                    感受，始终认为，作为一个有思维的生命有机体，这副躯体只会渐渐老去然后腐烂，而思维赋于这躯体灵魂，让它有了七情六欲和所有的感受：痛苦的、绝望的、遗感的、悔恨，或着是兴奋的、喜悦的、享受的，更喜欢的是平静的、悠慢的。
+在这乱世，平静是一种奢求。因为妄心所以贪婪。不停追求，无法停止，劳累一生，将死之际，悔恨不已，思索内心，探求平静。
+遣憾，是过往，是发生在过去而再也无法改变无法挽回的事情。是一场无...
+                </p>
+            </div>
+        </a>
+    </div>
+</div>
+                                                    <hr class="row">
+                                                    
+                                                <div class="row">
+    <div class="col">
+        <a href="/lit/%E7%97%9B%E8%8B%A6%E4%B8%8E%E7%BB%9D%E6%9C%9B%E4%B9%8B%E4%B8%8E%E7%94%9F%E5%91%BD/" class="index-card-link">
+            <div class="card-body index-card-box">
+                <h4 class="card-title text-dark article-title">痛苦与绝望之与生命</h4>
+                <h6 class="card-subtitle mt-2 text-muted">
+                    By QuHou; 
+                    Published on 2023-11-05</h6>
+                <p class="card-text text-dark mt-2 article-text">
+                    这常常伴随着遗憾，或者说，遗憾常伴随痛苦与绝望。但是遗憾之于生命的意义已经阐明，那么痛苦又有何价值？
+这实在是再简单而浅显不过的道理：为了微笑的价值更高。物依稀为贵，情绪亦然。温水中的青蛙必死无疑，温柔乡里的人们也毫无生气可言，即使他们看起来都还蛮不错的。当处于痛苦与绝望时，人会思考很多东西，事实上，人在任何时候都会思考很多东西。而在痛苦里会思考地更多：在生病时会思考健康的意义，会使我们在痊...
+                </p>
+            </div>
+        </a>
+    </div>
+</div>
+                                                    <hr class="row">
+                                                    
+                                                <div class="row">
+    <div class="col">
+        <a href="/lit/%E5%AE%BF%E5%91%BD/" class="index-card-link">
+            <div class="card-body index-card-box">
+                <h4 class="card-title text-dark article-title">宿命</h4>
+                <h6 class="card-subtitle mt-2 text-muted">
+                    By QuHou; 
+                    Published on 2023-10-05</h6>
+                <p class="card-text text-dark mt-2 article-text">
+                    或许，你会思考自己从何而来，又或者，要往哪儿去。
+我们终要爬进那黑黑的棺木，那我们所做的事到底有没有意义？我们生来到底是为了什么？写下这些自欺欺人的文字来反省自己的过错，还是读一些高深有哲理的话来让自己更清晰？然后呢，反省了、清醒了，换来的只能是更悲壮的现实–我本可以忍受黑暗，如果我未曾见过光明
+于是你开始思考自己要去往哪里，回想起年少的梦想，你想起自己说过要当宇航员，想看一看星辰大海。你躺...
+                </p>
+            </div>
+        </a>
+    </div>
+</div>
+                                                    <hr class="row">
+                                                    
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="paginator">
+                                                <div class="row">
+    <div class="col">
+        <nav aria-label="paginator" class="paginator">
+            <ul class="pagination d-none d-md-flex pagination-lg justify-content-center">
+                <li class="page-item ">
+                    <a class="page-link"
+                        href="/page/4/"
+                        aria-label="Previous">
+                        <span aria-hidden="true">&laquo;
+                            Newer</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item  disabled ">
+                    <a class="page-link"
+                        href="/"
+                        aria-label="Next">
+                        <span
+                            aria-hidden="true">Older
+                            &raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="pagination d-md-none justify-content-center">
+                <li class="page-item ">
+                    <a class="page-link"
+                        href="/page/4/"
+                        aria-label="Previous">
+                        <span aria-hidden="true">&laquo;
+                            Newer</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item  disabled ">
+                    <a class="page-link"
+                        href="/"
+                        aria-label="Next">
+                        <span
+                            aria-hidden="true">Older
+                            &raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div id="vcomment"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 pt-3">
+                                    
+    <div class="row">
+    <div class="col">
+        <h6>APPLAUSE FOR ME</h6>
+        <div id="applause-easy"></div>
+    </div>
+</div>
+    <hr class="row">
+
+
+
+
+    <div class="row">
+    <div class="col">
+        <h6>FEATURED TAGS</h6>
+        <div class="tags">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9D%91/" rel="tag">坑</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">面试题</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A1%AC%E4%BB%B6/" rel="tag">硬件</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" rel="tag">技术笔记</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" rel="tag">编译原理</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web3/" rel="tag">web3</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" rel="tag">游戏开发</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AC%E8%BD%BD/" rel="tag">转载</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CPP/" rel="tag">CPP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EDA/" rel="tag">EDA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/" rel="tag">效率工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bnf/" rel="tag">bnf</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logicCircuit/" rel="tag">logicCircuit</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/express/" rel="tag">express</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/" rel="tag">http</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/link/" rel="tag">link</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvm/" rel="tag">nvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rust/" rel="tag">rust</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vitepress/" rel="tag">vitepress</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/" rel="tag">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E5%8C%85%E6%9D%BF/" rel="tag">面包板</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+</div>
+    <hr class="row">
+
+
+    
+
+<div class="row">
+    <div class="col">
+      <h6>TRENDING POSTS</h6>
+      <div class="trending">
+        <ul>
+        
+        
+           
+             <li><a href="/tec/BTC的密码学原理/">BTC的密码学原理</a></li>
+           
+             <li><a href="/tec/EDA/">EDA</a></li>
+           
+             <li><a href="/tec/Git多人合作笔记/">Git多人合作笔记</a></li>
+           
+             <li><a href="/tec/SpringBoot学习/">SpringBoot学习</a></li>
+           
+             <li><a href="/tec/关于设置的代码片段不生效的问题/">关于设置的代码片段不生效的问题</a></li>
+           
+             <li><a href="/tec/国王和猪的游戏开发日志(第3天)/">国王和猪的游戏开发日志(第3天)</a></li>
+           
+             <li><a href="/tec/在ubuntu上部署nginx/">在ubuntu上部署nginx</a></li>
+           
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+    <hr class="row">
+
+
+    <div class="row">
+    <div class="col">
+        <h6>ABOUT ME</h6>
+        <div class="row">
+            <div class="col">
+                <div class="row justify-content-center">
+                    <div class="col-8 text-center">
+                        <img src="/img/face.jpg" alt="alt" class="img-thumbnail">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col text-center">
+                        <p class="text-muted">A person who writes code, writes chars, and draws lines.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-2 sidebar-socialmedia">
+            <div class="row">
+    <div class="col text-center">
+        <ul class="list-inline">
+            
+            <li class="list-inline-item">
+                
+                <a target="_blank" rel="noopener" href="https://github.com/xygodcyx">
+                    <span class="fa-stack fa-2x icon-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+                
+            </li>
+            
+            <li class="list-inline-item">
+                
+                <a target="_blank" rel="noopener" href="https://space.bilibili.com/1308065752">
+                    <span class="fa-stack fa-2x icon-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-bilibili-p fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+                
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+        </div>
+    </div>
+</div>
+    <hr class="row">
+
+
+
+    <div class="row">
+    <div class="col">
+        <h6>ARCHIVES</h6>
+        <div class="archive">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/">2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a></li></ul>
+        </div>
+    </div>
+</div>
+    <hr class="row">
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <footer>
+    <div class="jumbotron jumbotron-fluid mb-0">
+        <div class="container-fluid">
+            <div class="col text-center">
+                <div class="bottom-social">
+                    <div class="row">
+    <div class="col text-center">
+        <ul class="list-inline">
+            
+            <li class="list-inline-item">
+                
+                <a target="_blank" rel="noopener" href="https://github.com/xygodcyx">
+                    <span class="fa-stack fa-2x icon-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+                
+            </li>
+            
+            <li class="list-inline-item">
+                
+                <a target="_blank" rel="noopener" href="https://space.bilibili.com/1308065752">
+                    <span class="fa-stack fa-2x icon-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-bilibili-p fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+                
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+                </div>
+                <p class="copyright text-muted">
+                    Copyright &copy; 
+                    <br>
+                    Theme: <a target="_blank" rel="noopener" href="https://github.com/Hanlin-Dong/hexo-theme-adagio">Adagio</a> - A <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> theme made with love by <a target="_blank" rel="noopener" href="http://www.hanlindong.com">Hanlin Dong</a>.
+                    <br>
+                    Thanks for coming!
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+                            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.min.js"></script>
+    
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+
+
+<script src="/js/av.min.js"></script>
+
+
+<script src="/js/valine.min.js"></script>
+
+<!-- 
+<script src="/js/valine.min2.js"></script>
+ -->
+<!-- <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script> -->
+
+<script src="/js/applause-easy.js"></script>
+
+
+<script src="/js/highlight.min.js"></script>
+
+<script src="/js/gdscript.min.js"></script>
+
+<script type="module" src="/js/search.js"></script>
+
+<script>hljs.highlightAll();</script>
+
+<!-- and it's easy to individually load additional languages -->
+    
+<script>
+$(document).ready(function() {
+    new ApplauseEasy({
+        id: 'applause-easy',
+        appId: "Rut3rqcEtcoHzeZmzHIHmEaw-gzGzoHsz",
+        appKey: "Goyr6nvk7Uw6y9hQNrrhvzim",
+        img_src: "/img/clap.png",
+        img_width: "50px",
+        img_height: "50px",
+        trigger_every: 20,
+        trigger_fun: () => {console.log("Thanks!");}
+    })
+})
+</script>
+
+<script src="/js/adagio.js"></script>
+
+
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?123456789";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-11111111-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-11111111-1');
+</script>
+
+
+
+                                
+                                    <script>
+    new Valine({
+        el: "#vcomment",
+        appId: "Rut3rqcEtcoHzeZmzHIHmEaw-gzGzoHsz",
+        appKey: "Goyr6nvk7Uw6y9hQNrrhvzim",
+        avatar: "monsterid",
+        serverURLs: "https://rut3rqce.lc-cn-n1-shared.com",
+        like: true, // 启用点赞功能
+        likeType: 1, // 0: 点赞样式，1: 心形样式
+        visitor: true,
+        enableQQ: true,
+        recordIP: true,
+        emojiCDN: 'https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/',
+        emojiMaps: [
+            "bilibilitv/[tv_doge].png","bilibilitv/[tv_亲亲].png","bilibilitv/[tv_偷笑].png","bilibilitv/[tv_再见].png","bilibilitv/[tv_冷漠].png","bilibilitv/[tv_发怒].png","bilibilitv/[tv_发财].png","bilibilitv/[tv_可爱].png","bilibilitv/[tv_吐血].png","bilibilitv/[tv_呆].png","bilibilitv/[tv_呕吐].png","bilibilitv/[tv_困].png","bilibilitv/[tv_坏笑].png","bilibilitv/[tv_大佬].png","bilibilitv/[tv_大哭].png","bilibilitv/[tv_委屈].png","bilibilitv/[tv_害羞].png","bilibilitv/[tv_尴尬].png","bilibilitv/[tv_微笑].png","bilibilitv/[tv_思考].png","bilibilitv/[tv_惊吓].png","bilibilitv/[tv_打脸].png","bilibilitv/[tv_抓狂].png","bilibilitv/[tv_抠鼻].png","bilibilitv/[tv_斜眼笑].png","bilibilitv/[tv_无奈].png","bilibilitv/[tv_晕].png","bilibilitv/[tv_流汗].png","bilibilitv/[tv_流泪].png","bilibilitv/[tv_流鼻血].png","bilibilitv/[tv_点赞].png","bilibilitv/[tv_生气].png","bilibilitv/[tv_生病].png","bilibilitv/[tv_疑问].png","bilibilitv/[tv_白眼].png","bilibilitv/[tv_皱眉].png","bilibilitv/[tv_目瞪口呆].png","bilibilitv/[tv_睡着].png","bilibilitv/[tv_笑哭].png","bilibilitv/[tv_腼腆].png","bilibilitv/[tv_色].png","bilibilitv/[tv_调侃].png","bilibilitv/[tv_调皮].png","bilibilitv/[tv_鄙视].png","bilibilitv/[tv_闭嘴].png","bilibilitv/[tv_难过].png","bilibilitv/[tv_馋].png","bilibilitv/[tv_鬼脸].png","bilibilitv/[tv_黑人问号].png","bilibilitv/[tv_鼓掌].png",
+            "hr",
+            "bilibiliHotKey/1.jpg", "bilibiliHotKey/10.jpg", "bilibiliHotKey/11.jpg", "bilibiliHotKey/12.jpg", "bilibiliHotKey/13.jpg", "bilibiliHotKey/14.jpg", "bilibiliHotKey/15.jpg", "bilibiliHotKey/16.jpg", "bilibiliHotKey/17.jpg", "bilibiliHotKey/18.jpg", "bilibiliHotKey/19.jpg", "bilibiliHotKey/2.jpg", "bilibiliHotKey/20.jpg", "bilibiliHotKey/21.jpg", "bilibiliHotKey/22.jpg", "bilibiliHotKey/23.jpg", "bilibiliHotKey/24.jpg", "bilibiliHotKey/25.jpg", "bilibiliHotKey/26.jpg", "bilibiliHotKey/27.jpg", "bilibiliHotKey/28.jpg", "bilibiliHotKey/29.jpg", "bilibiliHotKey/3.jpg", "bilibiliHotKey/30.jpg", "bilibiliHotKey/31.jpg", "bilibiliHotKey/32.jpg", "bilibiliHotKey/4.jpg", "bilibiliHotKey/5.jpg", "bilibiliHotKey/6.jpg", "bilibiliHotKey/7.jpg", "bilibiliHotKey/8.jpg", "bilibiliHotKey/9.jpg",
+            "hr",
+            "Heybox/expression_cube.png", "Heybox/expression_cube_bingbujiandan.png", "Heybox/expression_cube_bizui.png", "Heybox/expression_cube_cangsang.png", "Heybox/expression_cube_dalian.png", "Heybox/expression_cube_doge.png", "Heybox/expression_cube_gandong.png", "Heybox/expression_cube_guai.png", "Heybox/expression_cube_gugu.png", "Heybox/expression_cube_han.png", "Heybox/expression_cube_hbi.png", "Heybox/expression_cube_heirenwenhao.png", "Heybox/expression_cube_huaji.png", "Heybox/expression_cube_jiayou.png", "Heybox/expression_cube_jingya.png", "Heybox/expression_cube_kaixin.png", "Heybox/expression_cube_ku.png", "Heybox/expression_cube_kun.png", "Heybox/expression_cube_kuqi.png", "Heybox/expression_cube_nu.png", "Heybox/expression_cube_penshui.png", "Heybox/expression_cube_qiliang.png", "Heybox/expression_cube_shengqi.png", "Heybox/expression_cube_shuijiao.png", "Heybox/expression_cube_tanqi.png", "Heybox/expression_cube_tanshou.png", "Heybox/expression_cube_tu.png", "Heybox/expression_cube_wa.png", "Heybox/expression_cube_weiqu.png", "Heybox/expression_cube_weixiao.png", "Heybox/expression_cube_wulianku.png", "Heybox/expression_cube_xia.png", "Heybox/expression_cube_xiaocry.png", "Heybox/expression_cube_xihuan.png", "Heybox/expression_cube_xuexi.png", "Heybox/expression_cube_yun.png", "Heybox/expression_cube_zan.png", "Heybox/expression_heyboxgirl.png", "Heybox/expression_heyboxgirl_v2.png", "Heybox/expression_heygirl.png", "Heybox/expression_heygirl_aidao.png", "Heybox/expression_heygirl_baipiaoguai.png", "Heybox/expression_heygirl_chi.png", "Heybox/expression_heygirl_chigua.png", "Heybox/expression_heygirl_eihei.png", "Heybox/expression_heygirl_haha.png", "Heybox/expression_heygirl_haixiu.png", "Heybox/expression_heygirl_henaicha.png", "Heybox/expression_heygirl_huaji.png", "Heybox/expression_heygirl_jing.png", "Heybox/expression_heygirl_jixialai.png", "Heybox/expression_heygirl_kaikele.png", "Heybox/expression_heygirl_ku.png", "Heybox/expression_heygirl_kujiuruhou.png", "Heybox/expression_heygirl_nielian.png", "Heybox/expression_heygirl_qiaokaixin.png", "Heybox/expression_heygirl_qiehua.png", "Heybox/expression_heygirl_rua.png", "Heybox/expression_heygirl_toukan.png", "Heybox/expression_heygirl_tu.png", "Heybox/expression_heygirl_wuyu.png", "Heybox/expression_heygirl_xihuan.png", "Heybox/expression_heygirl_yiwen.png", "Heybox/expression_heygirl_zhe.png", "Heybox/expression_heziji_1.png", "Heybox/expression_heziji_10.png", "Heybox/expression_heziji_11.png", "Heybox/expression_heziji_12.png", "Heybox/expression_heziji_13.png", "Heybox/expression_heziji_14.png", "Heybox/expression_heziji_15.png", "Heybox/expression_heziji_16.png", "Heybox/expression_heziji_17.png", "Heybox/expression_heziji_18.png", "Heybox/expression_heziji_19.png", "Heybox/expression_heziji_2.png", "Heybox/expression_heziji_20.png", "Heybox/expression_heziji_21.png", "Heybox/expression_heziji_22.png", "Heybox/expression_heziji_23.png", "Heybox/expression_heziji_24.png", "Heybox/expression_heziji_25.png", "Heybox/expression_heziji_26.png", "Heybox/expression_heziji_27.png", "Heybox/expression_heziji_28.png", "Heybox/expression_heziji_29.png", "Heybox/expression_heziji_3.png", "Heybox/expression_heziji_30.png", "Heybox/expression_heziji_31.png", "Heybox/expression_heziji_32.png", "Heybox/expression_heziji_4.png", "Heybox/expression_heziji_5.png", "Heybox/expression_heziji_6.png", "Heybox/expression_heziji_7.png", "Heybox/expression_heziji_8.png", "Heybox/expression_heziji_9.png",
+            "hr",
+            "HONKAI3-Daily/1.gif", "HONKAI3-Daily/10.gif", "HONKAI3-Daily/11.gif", "HONKAI3-Daily/12.gif", "HONKAI3-Daily/13.gif", "HONKAI3-Daily/14.gif", "HONKAI3-Daily/15.gif", "HONKAI3-Daily/16.gif", "HONKAI3-Daily/2.gif", "HONKAI3-Daily/3.gif", "HONKAI3-Daily/4.gif", "HONKAI3-Daily/5.gif", "HONKAI3-Daily/6.gif", "HONKAI3-Daily/7.gif", "HONKAI3-Daily/8.gif", "HONKAI3-Daily/9.gif",
+            "hr",
+            "Yurui-Neko/001.png", "Yurui-Neko/002.png", "Yurui-Neko/003.png", "Yurui-Neko/004.png", "Yurui-Neko/005.png", "Yurui-Neko/006.png", "Yurui-Neko/007.png", "Yurui-Neko/008.png", "Yurui-Neko/009.png", "Yurui-Neko/010.png", "Yurui-Neko/011.png", "Yurui-Neko/012.png", "Yurui-Neko/013.png", "Yurui-Neko/014.png", "Yurui-Neko/015.png", "Yurui-Neko/016.png", "Yurui-Neko/017.png", "Yurui-Neko/018.png", "Yurui-Neko/019.png", "Yurui-Neko/020.png", "Yurui-Neko/021.png", "Yurui-Neko/022.png", "Yurui-Neko/023.png", "Yurui-Neko/024.png", "Yurui-Neko/025.png", "Yurui-Neko/026.png", "Yurui-Neko/027.png", "Yurui-Neko/028.png", "Yurui-Neko/029.png", "Yurui-Neko/030.png", "Yurui-Neko/031.png", "Yurui-Neko/032.png", "Yurui-Neko/033.png", "Yurui-Neko/034.png", "Yurui-Neko/035.png", "Yurui-Neko/036.png", "Yurui-Neko/037.png", "Yurui-Neko/038.png", "Yurui-Neko/039.png", "Yurui-Neko/040.png",
+        ],
+        // 设置Bilibili表情包地址
+        // emojiCDN: '//i0.hdslb.com/bfs/emote/',
+        // // 表情title和图片映射
+        // emojiMaps: {
+        //     "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+        //     "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+        //     "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+        //     "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+        //     "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+        //     "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+        //     "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+        //     "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+        //     "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+        //     "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+        //     "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+        //     "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+        //     "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+        //     "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+        //     "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+        //     "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+        //     "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+        //     "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+        //     "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+        //     "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+        //     "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+        //     // ... 更多表情
+        // }
+
+
+
+    })
+</script>
+                                        
+    </body>
+
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="/img/face.jpg">
+    <title>fork cpu-XyGod</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" >
+    
+
+    
+<link rel="stylesheet" href="/css/adagio.css">
+
+    
+<link rel="stylesheet" href="/css/search.css">
+
+    
+<link rel="stylesheet" href="/css/tip.css">
+
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="XyGod" type="application/atom+xml">
+</head>
+
+    <body>
+        <div class="container-fluid">
+    <nav class="nav">
+        <div class="collapse navbar-collapse" id="navbar-sm">
+            
+                
+                    <div class="navbar-nav">
+                        <a href="/" class="nav-item nav-link">文章</a>
+                    </div>
+                    
+                    <div class="navbar-nav">
+                        <a href="/contact" class="nav-item nav-link">联系</a>
+                    </div>
+                    
+                    <div class="navbar-nav">
+                        <a href="/about" class="nav-item nav-link">关于</a>
+                    </div>
+                    
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link open-search" title="搜索 (Ctrl+Shift+K)">
+                            <!-- <span class="search-icon">🔍</span> -->
+                            搜索
+                        </a>
+                    </div>
+        </div>
+    </nav>
+</div>
+
+        <div class="d-flex d-md-none" style="width: 100%; background-color: #e9ecef">
+            
+                <div class="nav">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-sm"
+                        aria-expanded="false" aria-label="Toggle Navigation">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                </div>
+                
+                    <nav class="navbar ml-auto">
+                        <a class="navbar-brand" href="/">
+                            
+                                    XG
+                                        
+                        </a>
+                    </nav>
+        </div>
+        
+
+            <div class="container d-none d-md-block my-navbar">
+                <nav class="navbar navbar-expand-sm navbar-light bg-transparent">
+                    <a class="navbar-brand " href="/">
+                        
+                                XG
+                                    
+                    </a>
+                    
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                
+                                    
+                                        <li
+                                            class="nav-item pl-2 pr-2 ">
+                                            <!-- <span>tec/fork-cpu/</span> -->
+                                            <a class="nav-link" href="/">文章</a>
+                                        </li>
+                                        
+                                    
+                                        <li
+                                            class="nav-item pl-2 pr-2 ">
+                                            <!-- <span>tec/fork-cpu/</span> -->
+                                            <a class="nav-link" href="/contact">联系</a>
+                                        </li>
+                                        
+                                    
+                                        <li
+                                            class="nav-item pl-2 pr-2 ">
+                                            <!-- <span>tec/fork-cpu/</span> -->
+                                            <a class="nav-link" href="/about">关于</a>
+                                        </li>
+                                        
+                                            <li class="nav-item pl-2 pr-2">
+                                                <button class="search-btn open-search" id="open-search"
+                                                    title="搜索 (Ctrl+Shift+K)">
+                                                    <!-- <span class="search-icon">🔍</span> -->
+                                                    <span class="search-text">搜索</span>
+                                                    <span class="shortcut-key">Ctrl Shift K</span>
+                                                </button>
+                                            </li>
+                            </ul>
+                        </div>
+                        
+                </nav>
+            </div>
+
+            <div id="search-modal" class="search-modal" role="dialog" aria-hidden="true">
+                <div class="search-dialog" role="document">
+                    <div class="search-header">
+                        <input type="text" id="search-input" class="search-input" placeholder="搜索文章标题或内容..."
+                            autocomplete="off" />
+                        <button class="search-close" id="close-search" aria-label="关闭搜索">&times;</button>
+                    </div>
+                    <div id="search-results" class="search-results"></div>
+                </div>
+            </div>
+            
+    <div class="jumbotron jumbotron-fluid" style="background: url('/img/banner.jpg') 80% 100% / contain no-repeat">
+        <div class="container">
+            
+                    <h1 class="mt-4 article-title page-title">fork cpu</h1>
+                    
+                        
+                            <p class="lead text-gray mt-3">By XyGod; Published on 2025-09-28
+                            </p>
+                            
+                                
+                                    <div class="tags">
+                                        <ul class="tag-list">
+                                            
+                                                <li class="tag-list-item">
+                                                    <a class="tag-list-link"
+                                                        href="/tags/logicCircuit/">logicCircuit</a>
+                                                </li>
+                                                
+                                        </ul>
+                                    </div>
+                                    
+        </div>
+    </div>
+                <div class="container">
+                    <!-- <canvas width="1200" height="720" id="pixelCanvas" /> -->
+                    <div class="row">
+                        <div class="col-md-9 pt-2">
+                            <div class="row">
+                                <div class="col-12">
+                                    <main>
+                                        <article class="article-text page-content"><p>本文是笔者使用logic circuit模拟出一个8bit计算机的思考过程，仅做记录</p>
+<hr>
+<h2 id="真值表与卡诺图">真值表与卡诺图</h2>
+<ol>
+<li>
+<p>真值表可以辅助我们<strong>构建</strong>逻辑电路</p>
+</li>
+<li>
+<p>卡诺图可以辅助我们<strong>简化</strong>真值表达式</p>
+</li>
+</ol>
+<p>例如任意一个真值表：</p>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>S</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>那么表达式为：</p>
+<p>\begin{equation} S = \overline A + B \end{equation}</p>
+</article>
+                                    </main>
+                                    
+                                        
+                                                
+                                </div>
+                            </div>
+                            <div class="row mt-5 mb-5">
+                                <div class="col-12">
+                                    <div class="row">
+    <div class="col">
+        <nav aria-label="paginator" class="paginator">
+            <ul class="pagination d-none d-md-flex pagination-lg justify-content-center">
+                <li class="page-item ">
+                    <a class="page-link"
+                        href="/lit/%E6%89%80%E8%B0%93%E9%94%A4%E7%82%BC%E8%BF%87%E5%90%8E/"
+                        aria-label="Previous">
+                        <span aria-hidden="true">&laquo;
+                            所谓锤炼过后</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item ">
+                    <a class="page-link"
+                        href="/tec/%E9%9D%A2%E5%8C%85%E6%9D%BF%E6%8E%A5%E7%BA%BF/"
+                        aria-label="Next">
+                        <span
+                            aria-hidden="true">面包板接线
+                            &raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="pagination d-md-none justify-content-center">
+                <li class="page-item ">
+                    <a class="page-link"
+                        href="/lit/%E6%89%80%E8%B0%93%E9%94%A4%E7%82%BC%E8%BF%87%E5%90%8E/"
+                        aria-label="Previous">
+                        <span aria-hidden="true">&laquo;
+                            所谓锤炼过后</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item ">
+                    <a class="page-link"
+                        href="/tec/%E9%9D%A2%E5%8C%85%E6%9D%BF%E6%8E%A5%E7%BA%BF/"
+                        aria-label="Next">
+                        <span
+                            aria-hidden="true">面包板接线
+                            &raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div id="vcomment"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="container pt-4 page-sidebar">
+                                
+                                    <div class="row">
+    <div class="col">
+        <h6>APPLAUSE FOR ME</h6>
+        <div id="applause-easy"></div>
+    </div>
+</div>
+                                        
+                                            <hr class="row">
+                                            <div class="row toc-container">
+                                                <div class="col-12">
+                                                    <h6>NAVIGATION</h6>
+                                                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9C%9F%E5%80%BC%E8%A1%A8%E4%B8%8E%E5%8D%A1%E8%AF%BA%E5%9B%BE"><span class="toc-text">真值表与卡诺图</span></a></li></ol>
+                                                </div>
+                                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer>
+    <div class="jumbotron jumbotron-fluid mb-0">
+        <div class="container-fluid">
+            <div class="col text-center">
+                <div class="bottom-social">
+                    <div class="row">
+    <div class="col text-center">
+        <ul class="list-inline">
+            
+            <li class="list-inline-item">
+                
+                <a target="_blank" rel="noopener" href="https://github.com/xygodcyx">
+                    <span class="fa-stack fa-2x icon-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+                
+            </li>
+            
+            <li class="list-inline-item">
+                
+                <a target="_blank" rel="noopener" href="https://space.bilibili.com/1308065752">
+                    <span class="fa-stack fa-2x icon-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-bilibili-p fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+                
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+                </div>
+                <p class="copyright text-muted">
+                    Copyright &copy; 
+                    <br>
+                    Theme: <a target="_blank" rel="noopener" href="https://github.com/Hanlin-Dong/hexo-theme-adagio">Adagio</a> - A <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> theme made with love by <a target="_blank" rel="noopener" href="http://www.hanlindong.com">Hanlin Dong</a>.
+                    <br>
+                    Thanks for coming!
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+                    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.min.js"></script>
+    
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+
+
+<script src="/js/av.min.js"></script>
+
+
+<script src="/js/valine.min.js"></script>
+
+<!-- 
+<script src="/js/valine.min2.js"></script>
+ -->
+<!-- <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script> -->
+
+<script src="/js/applause-easy.js"></script>
+
+
+<script src="/js/highlight.min.js"></script>
+
+<script src="/js/gdscript.min.js"></script>
+
+<script type="module" src="/js/search.js"></script>
+
+<script>hljs.highlightAll();</script>
+
+<!-- and it's easy to individually load additional languages -->
+    
+<script>
+$(document).ready(function() {
+    new ApplauseEasy({
+        id: 'applause-easy',
+        appId: "Rut3rqcEtcoHzeZmzHIHmEaw-gzGzoHsz",
+        appKey: "Goyr6nvk7Uw6y9hQNrrhvzim",
+        img_src: "/img/clap.png",
+        img_width: "50px",
+        img_height: "50px",
+        trigger_every: 20,
+        trigger_fun: () => {console.log("Thanks!");}
+    })
+})
+</script>
+
+<script src="/js/adagio.js"></script>
+
+
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?123456789";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-11111111-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-11111111-1');
+</script>
+
+
+                        
+                            <script>
+    new Valine({
+        el: "#vcomment",
+        appId: "Rut3rqcEtcoHzeZmzHIHmEaw-gzGzoHsz",
+        appKey: "Goyr6nvk7Uw6y9hQNrrhvzim",
+        avatar: "monsterid",
+        serverURLs: "https://rut3rqce.lc-cn-n1-shared.com",
+        like: true, // 启用点赞功能
+        likeType: 1, // 0: 点赞样式，1: 心形样式
+        visitor: true,
+        enableQQ: true,
+        recordIP: true,
+        emojiCDN: 'https://cdn.jsdelivr.net/gh/GamerNoTitle/ValineCDN@master/',
+        emojiMaps: [
+            "bilibilitv/[tv_doge].png","bilibilitv/[tv_亲亲].png","bilibilitv/[tv_偷笑].png","bilibilitv/[tv_再见].png","bilibilitv/[tv_冷漠].png","bilibilitv/[tv_发怒].png","bilibilitv/[tv_发财].png","bilibilitv/[tv_可爱].png","bilibilitv/[tv_吐血].png","bilibilitv/[tv_呆].png","bilibilitv/[tv_呕吐].png","bilibilitv/[tv_困].png","bilibilitv/[tv_坏笑].png","bilibilitv/[tv_大佬].png","bilibilitv/[tv_大哭].png","bilibilitv/[tv_委屈].png","bilibilitv/[tv_害羞].png","bilibilitv/[tv_尴尬].png","bilibilitv/[tv_微笑].png","bilibilitv/[tv_思考].png","bilibilitv/[tv_惊吓].png","bilibilitv/[tv_打脸].png","bilibilitv/[tv_抓狂].png","bilibilitv/[tv_抠鼻].png","bilibilitv/[tv_斜眼笑].png","bilibilitv/[tv_无奈].png","bilibilitv/[tv_晕].png","bilibilitv/[tv_流汗].png","bilibilitv/[tv_流泪].png","bilibilitv/[tv_流鼻血].png","bilibilitv/[tv_点赞].png","bilibilitv/[tv_生气].png","bilibilitv/[tv_生病].png","bilibilitv/[tv_疑问].png","bilibilitv/[tv_白眼].png","bilibilitv/[tv_皱眉].png","bilibilitv/[tv_目瞪口呆].png","bilibilitv/[tv_睡着].png","bilibilitv/[tv_笑哭].png","bilibilitv/[tv_腼腆].png","bilibilitv/[tv_色].png","bilibilitv/[tv_调侃].png","bilibilitv/[tv_调皮].png","bilibilitv/[tv_鄙视].png","bilibilitv/[tv_闭嘴].png","bilibilitv/[tv_难过].png","bilibilitv/[tv_馋].png","bilibilitv/[tv_鬼脸].png","bilibilitv/[tv_黑人问号].png","bilibilitv/[tv_鼓掌].png",
+            "hr",
+            "bilibiliHotKey/1.jpg", "bilibiliHotKey/10.jpg", "bilibiliHotKey/11.jpg", "bilibiliHotKey/12.jpg", "bilibiliHotKey/13.jpg", "bilibiliHotKey/14.jpg", "bilibiliHotKey/15.jpg", "bilibiliHotKey/16.jpg", "bilibiliHotKey/17.jpg", "bilibiliHotKey/18.jpg", "bilibiliHotKey/19.jpg", "bilibiliHotKey/2.jpg", "bilibiliHotKey/20.jpg", "bilibiliHotKey/21.jpg", "bilibiliHotKey/22.jpg", "bilibiliHotKey/23.jpg", "bilibiliHotKey/24.jpg", "bilibiliHotKey/25.jpg", "bilibiliHotKey/26.jpg", "bilibiliHotKey/27.jpg", "bilibiliHotKey/28.jpg", "bilibiliHotKey/29.jpg", "bilibiliHotKey/3.jpg", "bilibiliHotKey/30.jpg", "bilibiliHotKey/31.jpg", "bilibiliHotKey/32.jpg", "bilibiliHotKey/4.jpg", "bilibiliHotKey/5.jpg", "bilibiliHotKey/6.jpg", "bilibiliHotKey/7.jpg", "bilibiliHotKey/8.jpg", "bilibiliHotKey/9.jpg",
+            "hr",
+            "Heybox/expression_cube.png", "Heybox/expression_cube_bingbujiandan.png", "Heybox/expression_cube_bizui.png", "Heybox/expression_cube_cangsang.png", "Heybox/expression_cube_dalian.png", "Heybox/expression_cube_doge.png", "Heybox/expression_cube_gandong.png", "Heybox/expression_cube_guai.png", "Heybox/expression_cube_gugu.png", "Heybox/expression_cube_han.png", "Heybox/expression_cube_hbi.png", "Heybox/expression_cube_heirenwenhao.png", "Heybox/expression_cube_huaji.png", "Heybox/expression_cube_jiayou.png", "Heybox/expression_cube_jingya.png", "Heybox/expression_cube_kaixin.png", "Heybox/expression_cube_ku.png", "Heybox/expression_cube_kun.png", "Heybox/expression_cube_kuqi.png", "Heybox/expression_cube_nu.png", "Heybox/expression_cube_penshui.png", "Heybox/expression_cube_qiliang.png", "Heybox/expression_cube_shengqi.png", "Heybox/expression_cube_shuijiao.png", "Heybox/expression_cube_tanqi.png", "Heybox/expression_cube_tanshou.png", "Heybox/expression_cube_tu.png", "Heybox/expression_cube_wa.png", "Heybox/expression_cube_weiqu.png", "Heybox/expression_cube_weixiao.png", "Heybox/expression_cube_wulianku.png", "Heybox/expression_cube_xia.png", "Heybox/expression_cube_xiaocry.png", "Heybox/expression_cube_xihuan.png", "Heybox/expression_cube_xuexi.png", "Heybox/expression_cube_yun.png", "Heybox/expression_cube_zan.png", "Heybox/expression_heyboxgirl.png", "Heybox/expression_heyboxgirl_v2.png", "Heybox/expression_heygirl.png", "Heybox/expression_heygirl_aidao.png", "Heybox/expression_heygirl_baipiaoguai.png", "Heybox/expression_heygirl_chi.png", "Heybox/expression_heygirl_chigua.png", "Heybox/expression_heygirl_eihei.png", "Heybox/expression_heygirl_haha.png", "Heybox/expression_heygirl_haixiu.png", "Heybox/expression_heygirl_henaicha.png", "Heybox/expression_heygirl_huaji.png", "Heybox/expression_heygirl_jing.png", "Heybox/expression_heygirl_jixialai.png", "Heybox/expression_heygirl_kaikele.png", "Heybox/expression_heygirl_ku.png", "Heybox/expression_heygirl_kujiuruhou.png", "Heybox/expression_heygirl_nielian.png", "Heybox/expression_heygirl_qiaokaixin.png", "Heybox/expression_heygirl_qiehua.png", "Heybox/expression_heygirl_rua.png", "Heybox/expression_heygirl_toukan.png", "Heybox/expression_heygirl_tu.png", "Heybox/expression_heygirl_wuyu.png", "Heybox/expression_heygirl_xihuan.png", "Heybox/expression_heygirl_yiwen.png", "Heybox/expression_heygirl_zhe.png", "Heybox/expression_heziji_1.png", "Heybox/expression_heziji_10.png", "Heybox/expression_heziji_11.png", "Heybox/expression_heziji_12.png", "Heybox/expression_heziji_13.png", "Heybox/expression_heziji_14.png", "Heybox/expression_heziji_15.png", "Heybox/expression_heziji_16.png", "Heybox/expression_heziji_17.png", "Heybox/expression_heziji_18.png", "Heybox/expression_heziji_19.png", "Heybox/expression_heziji_2.png", "Heybox/expression_heziji_20.png", "Heybox/expression_heziji_21.png", "Heybox/expression_heziji_22.png", "Heybox/expression_heziji_23.png", "Heybox/expression_heziji_24.png", "Heybox/expression_heziji_25.png", "Heybox/expression_heziji_26.png", "Heybox/expression_heziji_27.png", "Heybox/expression_heziji_28.png", "Heybox/expression_heziji_29.png", "Heybox/expression_heziji_3.png", "Heybox/expression_heziji_30.png", "Heybox/expression_heziji_31.png", "Heybox/expression_heziji_32.png", "Heybox/expression_heziji_4.png", "Heybox/expression_heziji_5.png", "Heybox/expression_heziji_6.png", "Heybox/expression_heziji_7.png", "Heybox/expression_heziji_8.png", "Heybox/expression_heziji_9.png",
+            "hr",
+            "HONKAI3-Daily/1.gif", "HONKAI3-Daily/10.gif", "HONKAI3-Daily/11.gif", "HONKAI3-Daily/12.gif", "HONKAI3-Daily/13.gif", "HONKAI3-Daily/14.gif", "HONKAI3-Daily/15.gif", "HONKAI3-Daily/16.gif", "HONKAI3-Daily/2.gif", "HONKAI3-Daily/3.gif", "HONKAI3-Daily/4.gif", "HONKAI3-Daily/5.gif", "HONKAI3-Daily/6.gif", "HONKAI3-Daily/7.gif", "HONKAI3-Daily/8.gif", "HONKAI3-Daily/9.gif",
+            "hr",
+            "Yurui-Neko/001.png", "Yurui-Neko/002.png", "Yurui-Neko/003.png", "Yurui-Neko/004.png", "Yurui-Neko/005.png", "Yurui-Neko/006.png", "Yurui-Neko/007.png", "Yurui-Neko/008.png", "Yurui-Neko/009.png", "Yurui-Neko/010.png", "Yurui-Neko/011.png", "Yurui-Neko/012.png", "Yurui-Neko/013.png", "Yurui-Neko/014.png", "Yurui-Neko/015.png", "Yurui-Neko/016.png", "Yurui-Neko/017.png", "Yurui-Neko/018.png", "Yurui-Neko/019.png", "Yurui-Neko/020.png", "Yurui-Neko/021.png", "Yurui-Neko/022.png", "Yurui-Neko/023.png", "Yurui-Neko/024.png", "Yurui-Neko/025.png", "Yurui-Neko/026.png", "Yurui-Neko/027.png", "Yurui-Neko/028.png", "Yurui-Neko/029.png", "Yurui-Neko/030.png", "Yurui-Neko/031.png", "Yurui-Neko/032.png", "Yurui-Neko/033.png", "Yurui-Neko/034.png", "Yurui-Neko/035.png", "Yurui-Neko/036.png", "Yurui-Neko/037.png", "Yurui-Neko/038.png", "Yurui-Neko/039.png", "Yurui-Neko/040.png",
+        ],
+        // 设置Bilibili表情包地址
+        // emojiCDN: '//i0.hdslb.com/bfs/emote/',
+        // // 表情title和图片映射
+        // emojiMaps: {
+        //     "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+        //     "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+        //     "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+        //     "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+        //     "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+        //     "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+        //     "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+        //     "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+        //     "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+        //     "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+        //     "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+        //     "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+        //     "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+        //     "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+        //     "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+        //     "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+        //     "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+        //     "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+        //     "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+        //     "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+        //     "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+        //     // ... 更多表情
+        // }
+
+
+
+    })
+</script>
+                                
+    </body>
+
+</html>
