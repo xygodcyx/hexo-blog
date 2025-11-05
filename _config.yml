@@ -124,7 +124,10 @@ theme: adagio
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: git@github.com:yourname/blog.git
+  branch: deploy
+
 
 server:
   compress: true # 开启压缩
@@ -152,8 +155,3 @@ search:
   field: post
   format: striptags
   limit: 10000
-
-deploy:
-  type: git
-  repo: git@github.com:xygodcyx/blog.git
-  branch: deploy
