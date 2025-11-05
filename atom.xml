@@ -6,7 +6,7 @@
   <link href="http://quhou.top/atom.xml" rel="self"/>
   
   <link href="http://quhou.top/"/>
-  <updated>2025-11-05T05:20:04.507Z</updated>
+  <updated>2025-11-05T07:21:05.947Z</updated>
   <id>http://quhou.top/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://quhou.top/tec/hexo%E5%8D%A1%E7%89%87%E5%8A%9F%E8%83%BD/"/>
     <id>http://quhou.top/tec/hexo%E5%8D%A1%E7%89%87%E5%8A%9F%E8%83%BD/</id>
     <published>2025-11-04T12:58:38.000Z</published>
-    <updated>2025-11-05T05:20:04.507Z</updated>
+    <updated>2025-11-05T07:21:05.947Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>Life is like riding a bicycle. To keep your balance you must keep moving.</p><footer><strong>Albert Einstein</strong><cite>Relativity</cite></footer></blockquote><figure class="highlight js"><figcaption><span>index.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">hello</span>(<span class="params"></span>) &#123;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Hello Hexo!&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">hello</span>();</span><br></pre></td></tr></table></figure><details class="md-details"><summary>详细</summary><p>详细</p></details><details class="md-details"><summary>详细2</summary><p>详细2</p></details><div class="md-tip"><p>提示</p></div>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>Life is like riding a bicycle. To keep your balance you must keep moving.</p><footer><strong>Albert Einstein</strong><cite>Relativity</cite></footer></blockquote><figure class="highlight js"><figcaption><span>index.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">hello</span>(<span class="params"></span>) &#123;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Hello Hexo!&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">hello</span>();</span><br></pre></td></tr></table></figure><details class="md-details"><summary>详细</summary><p>详细</p></details><div class="md-tip"><p>提示</p></div>]]></content>
     
     
       
