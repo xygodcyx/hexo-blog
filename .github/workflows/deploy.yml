@@ -16,11 +16,9 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            cd /root/code/hexo-blog
-            git fetch origin main
-            git reset --hard origin/main
-            bun install
-            npx hexo clean
-            npx hexo g
-            sudo rm -rf /opt/1panel/www/sites/quhou.top/index/*
-            sudo cp -r /root/code/hexo-blog/public/* /opt/1panel/www/sites/quhou.top/index/
+            # cd /root/code/blog
+            # git fetch origin deploy
+            # git branch deploy
+            # git reset --hard origin/deploy
+            # sudo rm -rf /opt/1panel/www/sites/quhou.top/index/*
+            # sudo cp -r /root/code/blog/public/* /opt/1panel/www/sites/quhou.top/index/

@@ -153,3 +153,7 @@ search:
   format: striptags
   limit: 10000
 
+deploy:
+  type: git
+  repo: git@github.com:xygodcyx/blog.git
+  branch: deploy
