@@ -22,6 +22,5 @@ jobs:
             bun install
             npx hexo clean
             npx hexo g
-            sudo rm -rf /var/www/blog/*
-            sudo cp -r /root/code/hexo-blog/public/* /var/www/blog/
-            sudo systemctl reload nginx
+            sudo rm -rf /opt/1panel/www/sites/quhou.top/index/*
+            sudo cp -r /root/code/hexo-blog/public/* /opt/1panel/www/sites/quhou.top/index/
