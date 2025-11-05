@@ -20,5 +20,5 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             bun install
-            bun run build
+            npm run build
             sudo rsync -av --delete /root/code/blog/public/ /opt/1panel/www/sites/quhou.top/index/
