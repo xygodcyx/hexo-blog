@@ -3,7 +3,7 @@ name: Deploy Hexo Blog
 on:
   push:
     branches:
-      - deploy
+      - main
 
 jobs:
   deploy:
@@ -17,7 +17,8 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             cd /root/code/blog
-            git fetch origin deploy
-            git reset --hard origin/deploy
-            git switch origin/deploy --detach
-            sudo rsync -av --delete /root/code/blog/ /opt/1panel/www/sites/quhou.top/index/
+            git fetch origin main
+            git reset --hard origin/main
+            bun install
+            bun run build
+            sudo rsync -av --delete /root/code/blog/public/ /opt/1panel/www/sites/quhou.top/index/

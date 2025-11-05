@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "new": "node tools/new.js",
-    "build": "hexo generate",
+    "build": "hexo clean && hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo clean && hexo generate && hexo deploy",
     "server": "hexo server"
